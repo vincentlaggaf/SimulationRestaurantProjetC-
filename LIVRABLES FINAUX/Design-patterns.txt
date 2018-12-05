@@ -1,0 +1,7 @@
+-      MVC : Pour découper le code en modules, et ainsi permettre l’écriture du code de manière indépendante pour chacun d’entre eux
+ 
+-      Singleton : pour limiter à une seule et unique instanciation un objet → restaurant, maitre d’hôtel
+  
+-      Abstract Factory : Pour permettre la création de plat,et de client pouvant être de différents type sans que l’utilisateur n’ait à s’occuper de cet aspect
+
+-      Observer : Pour permettre le déclenchement de certaines actions lors d’évènements
