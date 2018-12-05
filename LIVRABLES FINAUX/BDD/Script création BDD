@@ -1,0 +1,143 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: Plat
+#------------------------------------------------------------
+
+CREATE TABLE Plat(
+        ID_Plat      Int  Auto_increment  NOT NULL ,
+        Nom          Varchar (255) NOT NULL ,
+        Prix         Int NOT NULL ,
+        Preparation  Double NOT NULL ,
+        Cuisson      Double NOT NULL ,
+        NbrePersonne Int NOT NULL
+	,CONSTRAINT Plat_PK PRIMARY KEY (ID_Plat)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Table
+#------------------------------------------------------------
+
+CREATE TABLE Table(
+        ID_Table Int  Auto_increment  NOT NULL ,
+        Places   Int NOT NULL
+	,CONSTRAINT Table_PK PRIMARY KEY (ID_Table)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Zone_Stockage
+#------------------------------------------------------------
+
+CREATE TABLE Zone_Stockage(
+        ID_Stock    Int  Auto_increment  NOT NULL ,
+        Nom         Varchar (255) NOT NULL ,
+        Temperature Double NOT NULL
+	,CONSTRAINT Zone_Stockage_PK PRIMARY KEY (ID_Stock)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Ingredients
+#------------------------------------------------------------
+
+CREATE TABLE Ingredients(
+        ID_Ingredient Int  Auto_increment  NOT NULL ,
+        Nom           Varchar (255) NOT NULL ,
+        Quantite      Int NOT NULL ,
+        Dlc           Date NOT NULL ,
+        ID_Stock      Int NOT NULL
+	,CONSTRAINT Ingredients_PK PRIMARY KEY (ID_Ingredient)
+
+	,CONSTRAINT Ingredients_Zone_Stockage_FK FOREIGN KEY (ID_Stock) REFERENCES Zone_Stockage(ID_Stock)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: MaterielCommun
+#------------------------------------------------------------
+
+CREATE TABLE MaterielCommun(
+        ID_MaterielCommun Int  Auto_increment  NOT NULL ,
+        Nom               Varchar (255) NOT NULL ,
+        Quantite          Int NOT NULL
+	,CONSTRAINT MaterielCommun_PK PRIMARY KEY (ID_MaterielCommun)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: MaterielSalleRestau
+#------------------------------------------------------------
+
+CREATE TABLE MaterielSalleRestau(
+        ID_MaterielSalleRestau Int  Auto_increment  NOT NULL ,
+        Nom                    Varchar (255) NOT NULL ,
+        Quantite               Int NOT NULL
+	,CONSTRAINT MaterielSalleRestau_PK PRIMARY KEY (ID_MaterielSalleRestau)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Commande
+#------------------------------------------------------------
+
+CREATE TABLE Commande(
+        ID_Plat   Int NOT NULL ,
+        ID_Table  Int NOT NULL ,
+        Quantite  Int NOT NULL ,
+        PrixTotal Double NOT NULL
+	,CONSTRAINT Commande_PK PRIMARY KEY (ID_Plat,ID_Table)
+
+	,CONSTRAINT Commande_Plat_FK FOREIGN KEY (ID_Plat) REFERENCES Plat(ID_Plat)
+	,CONSTRAINT Commande_Table0_FK FOREIGN KEY (ID_Table) REFERENCES Table(ID_Table)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Compose
+#------------------------------------------------------------
+
+CREATE TABLE Compose(
+        ID_Plat       Int NOT NULL ,
+        ID_Ingredient Int NOT NULL ,
+        Quantite      Int NOT NULL
+	,CONSTRAINT Compose_PK PRIMARY KEY (ID_Plat,ID_Ingredient)
+
+	,CONSTRAINT Compose_Plat_FK FOREIGN KEY (ID_Plat) REFERENCES Plat(ID_Plat)
+	,CONSTRAINT Compose_Ingredients0_FK FOREIGN KEY (ID_Ingredient) REFERENCES Ingredients(ID_Ingredient)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Utilise
+#------------------------------------------------------------
+
+CREATE TABLE Utilise(
+        ID_Plat           Int NOT NULL ,
+        ID_MaterielCommun Int NOT NULL ,
+        Quantite          Int NOT NULL
+	,CONSTRAINT Utilise_PK PRIMARY KEY (ID_Plat,ID_MaterielCommun)
+
+	,CONSTRAINT Utilise_Plat_FK FOREIGN KEY (ID_Plat) REFERENCES Plat(ID_Plat)
+	,CONSTRAINT Utilise_MaterielCommun0_FK FOREIGN KEY (ID_MaterielCommun) REFERENCES MaterielCommun(ID_MaterielCommun)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: POSE
+#------------------------------------------------------------
+
+CREATE TABLE POSE(
+        ID_Table               Int NOT NULL ,
+        ID_MaterielSalleRestau Int NOT NULL ,
+        Quantite               Int NOT NULL
+	,CONSTRAINT POSE_PK PRIMARY KEY (ID_Table,ID_MaterielSalleRestau)
+
+	,CONSTRAINT POSE_Table_FK FOREIGN KEY (ID_Table) REFERENCES Table(ID_Table)
+	,CONSTRAINT POSE_MaterielSalleRestau0_FK FOREIGN KEY (ID_MaterielSalleRestau) REFERENCES MaterielSalleRestau(ID_MaterielSalleRestau)
+)ENGINE=InnoDB;
+
