@@ -22,7 +22,7 @@ CREATE TABLE Plat(
 # Table: Table
 #------------------------------------------------------------
 
-CREATE TABLE Table(
+CREATE TABLE Tables(
         ID_Table Int  Auto_increment  NOT NULL ,
         Places   Int NOT NULL
 	,CONSTRAINT Table_PK PRIMARY KEY (ID_Table)
@@ -93,7 +93,7 @@ CREATE TABLE Commande(
 	,CONSTRAINT Commande_PK PRIMARY KEY (ID_Plat,ID_Table)
 
 	,CONSTRAINT Commande_Plat_FK FOREIGN KEY (ID_Plat) REFERENCES Plat(ID_Plat)
-	,CONSTRAINT Commande_Table0_FK FOREIGN KEY (ID_Table) REFERENCES Table(ID_Table)
+	,CONSTRAINT Commande_Table0_FK FOREIGN KEY (ID_Table) REFERENCES Tables(ID_Table)
 )ENGINE=InnoDB;
 
 
@@ -137,7 +137,6 @@ CREATE TABLE POSE(
         Quantite               Int NOT NULL
 	,CONSTRAINT POSE_PK PRIMARY KEY (ID_Table,ID_MaterielSalleRestau)
 
-	,CONSTRAINT POSE_Table_FK FOREIGN KEY (ID_Table) REFERENCES Table(ID_Table)
+	,CONSTRAINT POSE_Table_FK FOREIGN KEY (ID_Table) REFERENCES Tables(ID_Table)
 	,CONSTRAINT POSE_MaterielSalleRestau0_FK FOREIGN KEY (ID_MaterielSalleRestau) REFERENCES MaterielSalleRestau(ID_MaterielSalleRestau)
 )ENGINE=InnoDB;
-
