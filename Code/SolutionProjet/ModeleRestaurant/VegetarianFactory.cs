@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    public class Class1
+    class VegetarianFactory : IPlatFactory
     {
+        public AbstractDish getDish()
+        {
+           //Not yet implemented
+        }
     }
 }
