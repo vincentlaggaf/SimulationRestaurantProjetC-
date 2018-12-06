@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ControleurRestaurant
 {
-    public class Class1
+    interface IStaff
     {
+
     }
+
+
+    public enum Availability {busy, waiting, helping};
+
 }
