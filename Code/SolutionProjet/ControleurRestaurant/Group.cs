@@ -4,48 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ControleurRestaurant
 {
-    public class Table
+
+    public class Group
     {
 
-        private int idTable;
+        private int sizeGroup;
 
-        public int MyIdTable
+        public int MySizeGroup
         {
-            get { return idTable; }
-            set { idTable = value; }
+            get { return sizeGroup; }
+            set { sizeGroup = value; }
         }
 
-        private int numberSeats;
+        private List<int> clientList = new List<int>();
 
-        public int MyNumberSeats
+        public void GetMyClientList()
+        { clientList.Add(GetClient); }
+
+        //sizeGroup = clientList.Count;
+
+        public CreateGroup(int sizeGroup)
         {
-            get { return numberSeats; }
-            set { numberSeats = value; }
+            sizeGroup = clientList;
+
         }
 
-        private Group()
-        {
+        private List<string> dishList = new List<string>();
 
-        }
 
-        Group group1 = new Group();
+        // RegularFactory regularFactory = new RegularFactory();
+        // VegetarianFactory vegetarianFactory = new VegetarianFactory();
 
-        private bool available;
 
-        public bool MyAvailable
-        {
-            get { return available; }
-            set { available = value; }
-        }
+        public void GetCreateDishList()
+        { dishList.Add(); }
 
-        public int getNumberSeat
-        {
-            get
-            {
-                return
-            }
-        }
     }
 }
