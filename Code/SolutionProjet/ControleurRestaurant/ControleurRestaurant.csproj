@@ -46,6 +46,7 @@
     <Compile Include="Commande.cs" />
     <Compile Include="IStaff.cs" />
     <Compile Include="MaitreHotel.cs" />
+    <Compile Include="Restaurant.cs" />
     <Compile Include="Serveur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableController.cs" />
