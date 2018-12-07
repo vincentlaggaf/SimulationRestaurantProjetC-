@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Main
 {
@@ -6,11 +10,7 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            //TEST supress ingredient sql
-            //Bdd bdd = new Bdd();
-            //bdd.SupressIngredient(2);
+            Console.Write("Hello world");
         }
     }
 }
