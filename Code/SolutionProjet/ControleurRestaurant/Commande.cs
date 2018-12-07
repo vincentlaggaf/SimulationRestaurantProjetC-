@@ -24,7 +24,7 @@ namespace ControleurRestaurant
 
         }
 
-        public void startPréparation(double time)
+        public void startPreparation(double time)
         {
 
         }

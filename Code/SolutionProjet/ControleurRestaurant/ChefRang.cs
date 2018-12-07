@@ -30,5 +30,10 @@ namespace ControleurRestaurant
 
         }
 
+        public void dressTable(int sizeGroup)
+        {
+
+        }
+
     }
 }
