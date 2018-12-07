@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bdd.cs" />
+    <Compile Include="Ustensil.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="DishRegular.cs" />
     <Compile Include="DishVegetarian.cs" />
