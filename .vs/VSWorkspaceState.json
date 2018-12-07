@@ -4,9 +4,9 @@
     "\\Code",
     "\\Code\\SolutionProjet",
     "\\Code\\SolutionProjet\\ControleurRestaurant",
-    "\\Code\\SolutionProjet\\Main",
+    "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
     "\\Code\\SolutionProjet\\ModeleRestaurant"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\SolutionProjet.sln",
+  "SelectedNode": "\\Code\\SolutionProjet\\ModeleRestaurant",
   "PreviewInSolutionExplorer": false
 }
