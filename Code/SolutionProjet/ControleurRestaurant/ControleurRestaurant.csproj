@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,12 +43,13 @@
   <ItemGroup>
     <Compile Include="ChefRang.cs" />
     <Compile Include="Group.cs" />
-    <Compile Include="Table.cs" />
     <Compile Include="Commande.cs" />
     <Compile Include="IStaff.cs" />
     <Compile Include="MaitreHotel.cs" />
+    <Compile Include="Restaurant.cs" />
     <Compile Include="Serveur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
