@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks; using ControleurRestaurant;
+using ModeleRestaurant;
 
-namespace Main
-{
-    class MainClass
+namespace Main {
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Restaurant restaurant = new Restaurant();
+            restaurant.restaurant(); 
         }
-    }
-}
+    } }
