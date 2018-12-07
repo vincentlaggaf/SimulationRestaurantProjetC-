@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControleurRestaurant
 {
-    class Serveur : IStaff
+    public class Serveur : IStaff
     {
         private Availability availability;   
         public Availability MyAvailability

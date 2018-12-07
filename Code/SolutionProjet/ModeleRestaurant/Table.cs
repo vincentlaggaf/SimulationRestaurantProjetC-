@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleurRestaurant
+namespace ModeleRestaurant
 {
     public class Table
     {
@@ -25,12 +25,12 @@ namespace ControleurRestaurant
             set { numberSeats = value; }
         }
 
-        private Group()
-        {
+        //private Group()
+        //{
 
-        }
+        //}
 
-        Group group1 = new Group();
+        //Group group1 = new Group();
 
         private bool available;
 
@@ -40,10 +40,10 @@ namespace ControleurRestaurant
             set { available = value; }
         }
 
-        public int getNumberSeat()
-        {
+        //public int getNumberSeat()
+        //{
 
-        }
+        //}
 
     }
 }
