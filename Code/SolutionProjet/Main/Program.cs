@@ -7,6 +7,10 @@ namespace Main
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            //TEST supress ingredient sql
+            //Bdd bdd = new Bdd();
+            //bdd.SupressIngredient(2);
         }
     }
 }
