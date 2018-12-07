@@ -51,5 +51,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableController.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModeleRestaurant\ModeleRestaurant.csproj">
+      <Project>{99D0B851-618E-443C-B1EF-231B9194004A}</Project>
+      <Name>ModeleRestaurant</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

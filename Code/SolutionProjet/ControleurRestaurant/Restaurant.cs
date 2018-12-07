@@ -10,6 +10,7 @@ namespace ControleurRestaurant
     {
         public void restaurant()
         {
+
             //Instiate the Maitre d'Hotel
             MaitreHotel maitreHotel = new MaitreHotel();
 
@@ -18,18 +19,23 @@ namespace ControleurRestaurant
             int nbServeur = 5;
             while (i < nbServeur) {
                 Serveur serveur = new Serveur();
-               
-                serveur.MyId = i;
+                serveur.MyId = i+1;
+                Console.WriteLine("ajout du serveur : "+serveur.MyId);
                 i++;
-                Console.WriteLine("ajout du serveur"+serveur.MyId);
-             }
+            }
 
+            //Instiate the table controller
+            TableController.GetTableController().createListTable(4);
+            //TableController.GetTableController().MylistTable.ForEach(Console.WriteLine);
+            int j = 0;
+            while (j < TableController.GetTableController().MylistTable.Count)
+            {
+                Console.WriteLine("table id : "+ TableController.GetTableController().MylistTable.ElementAt(j).MyIdTable);
+                j++;
+            }
 
 
             //Instiate the Exchange area
-            // A FAIRE
-
-            //Instiate the table controller
             // A FAIRE
 
             //Instiate the ustensils

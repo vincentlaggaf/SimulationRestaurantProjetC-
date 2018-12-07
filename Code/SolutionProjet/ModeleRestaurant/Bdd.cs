@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,6 +62,34 @@ namespace ConsoleApp3
 
                 cmdDecrease.CommandText = "UPDATE ingredients SET Quantite = Quantite - 1 WHERE ID_ingredient =" + idIngredient;
                 cmdDecrease.ExecuteNonQuery();
+
+                this.connection.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e);
+            }
+
+        }
+
+        //interagie avec la class Maitre d'hotel
+        public void CheckTable(int place)
+        {
+            try
+            {
+                //open sql connecion
+                this.connection.Open();
+                MySqlCommand cmdCheckSeats = this.connection.CreateCommand();
+
+                cmdCheckSeats.CommandText = "SELECT ID_Table FROM tables WHERE Places =@seats AND occuper = 0";
+                cmdCheckSeats.Parameters.AddWithValue("@seats", place);
+                cmdCheckSeats.ExecuteNonQuery();
+                MySqlDataReader reader = cmdCheckSeats.ExecuteReader();
+                using (DataTable dt = new DataTable())
+                {
+                    dt.Load(reader);
+                    Console.WriteLine(dt.Rows.Count);
+                }
 
                 this.connection.Close();
             }
