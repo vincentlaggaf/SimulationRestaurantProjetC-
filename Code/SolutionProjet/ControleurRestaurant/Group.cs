@@ -6,33 +6,46 @@ using System.Threading.Tasks;
 
 namespace ControleurRestaurant
 {
-
-    public class Group
+    public class Table
     {
 
-        //private int sizeGroup;
+        private int idTable;
 
-        //public int MySizeGroup
-        //{
-        //    get { return sizeGroup; }
-        //    set { sizeGroup = value; }
-        //}
+        public int MyIdTable
+        {
+            get { return idTable; }
+            set { idTable = value; }
+        }
 
-        //private List<int> clientList = new List<int>();
+        private int numberSeats;
 
-        //public void createClientList
-        //{
-        //    get { return clientList; }
+        public int MyNumberSeats
+        {
+            get { return numberSeats; }
+            set { numberSeats = value; }
+        }
 
-        //}
+        private Group()
+        {
 
-        //private List<string> dishList = new List<string>();
+        }
 
-        //public void createDishList
-        //{
-        //    get { return dishList; }
+        Group group1 = new Group();
 
-        //}
+        private bool available;
 
+        public bool MyAvailable
+        {
+            get { return available; }
+            set { available = value; }
+        }
+
+        public int getNumberSeat
+        {
+            get
+            {
+                return
+            }
+        }
     }
 }
