@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bdd.cs" />
+    <Compile Include="ClientFactory.cs" />
+    <Compile Include="IClientFactory.cs" />
     <Compile Include="Ustensil.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="DishRegular.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="RegularFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table.cs" />
+    <Compile Include="ZoneExchange.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

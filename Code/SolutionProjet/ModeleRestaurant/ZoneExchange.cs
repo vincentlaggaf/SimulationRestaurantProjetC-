@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    public interface IClient
+    public class ZoneExchange
     {
-       
-         void Command(int i);
+        public void CommandComplete()
+        {
+
+        }
     }
 }

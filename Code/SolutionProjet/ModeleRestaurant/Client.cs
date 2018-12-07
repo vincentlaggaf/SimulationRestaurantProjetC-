@@ -6,15 +6,32 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    class Client : IClient
+    public  class Client : IClient
     {
-        int order;
-
-        public int Command()
+        
+        private int order;
+        
+        public int Order
         {
-            Random rnd = new Random();
-            order = rnd.Next(1, 2);
-            return order;
+            get { return order; }
+            set { order = value; }
         }
+
+        public Client(int i)
+        {
+
+           
+            Command(i);
+        }
+        public void Command(int i)
+        {
+            
+            Order = i;
+        
+        }
+      
+
+       
+
     }
 }

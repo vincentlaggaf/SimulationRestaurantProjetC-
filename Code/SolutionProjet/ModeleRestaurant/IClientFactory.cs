@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    interface IClientFactory
+   public interface IClientFactory
     {
-        Client GetClient();
+        Client GetClient(int i);
     }
 }
