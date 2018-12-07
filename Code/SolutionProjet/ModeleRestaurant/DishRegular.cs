@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    class DishRegular : AbstractDish
+    public class DishRegular : AbstractDish
     {
-        DishRegular()
+       public DishRegular()
         {
-
+            this.Name ="RegularDish";
+            this.Price =5;
+            this.Id = 1;
+            this.PreparationTime = 25;
         }
+        
+        
 
     }
 }

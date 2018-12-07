@@ -10,7 +10,7 @@ namespace ModeleRestaurant
     {
         public AbstractDish getDish()
         {
-           //Not yet implemented
+            return new DishVegetarian();
         }
     }
 }

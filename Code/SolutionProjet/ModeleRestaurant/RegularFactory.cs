@@ -9,11 +9,9 @@ namespace ModeleRestaurant
     class RegularFactory : IPlatFactory
     {
         
-
-        
         public AbstractDish getDish()
         {
-            //Not yet implemented
+            return new DishRegular();
         }
         
     }

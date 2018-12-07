@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    class Client
+    class Client : IClient
     {
+        int order;
+
+        public int Command()
+        {
+            Random rnd = new Random();
+            order = rnd.Next(1, 2);
+            return order;
+        }
     }
 }

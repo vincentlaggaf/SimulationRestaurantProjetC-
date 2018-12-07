@@ -10,12 +10,15 @@ namespace ModeleRestaurant
     {
       
 
-        DishVegetarian()
+       public  DishVegetarian()
         {
-            this.Name="toto";
-            
-            
-            
+            this.Name = "VegetarianDish";
+            this.Price = 10;
+            this.Id = 2;
+            this.PreparationTime = 35;
+
+
+
         }
 
     }
