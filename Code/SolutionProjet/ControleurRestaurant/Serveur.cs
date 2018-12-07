@@ -8,13 +8,20 @@ namespace ControleurRestaurant
 {
     class Serveur : IStaff
     {
-        private Availability availability;
-
+        private Availability availability;   
         public Availability MyAvailability
         {
             get { return availability; }
             set { availability = value; }
         }
+
+        private int id;
+        public int MyId
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
 
         public void serveCommand()
         {
