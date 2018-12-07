@@ -49,7 +49,7 @@
     <Compile Include="MaitreHotel.cs" />
     <Compile Include="Serveur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EmptyClass.cs" />
+    <Compile Include="TableController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
