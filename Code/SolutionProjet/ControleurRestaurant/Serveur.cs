@@ -28,14 +28,19 @@ namespace ControleurRestaurant
 
         }
 
-        public void cleanTable()
+        public void cleanTable(int idTable)
         {
+            // il faut que cette méthode récupère le nombre de couverts et les libère en reremplissant la BDD
+            // exemple table 4 places --> +4 fourchettes dans la BDD, +4 Couteaux, etc
+            // de plus il faut setter la table à available
 
         }
 
         public void serveWaterBread()
         {
-
+            // booleen dans la Classe table, waterAndBread
+            // setté à true --> au bout d'un laps de temps, il passe à false
+            // --> EVENT : appelle cette méthode qui le re-set à true pendant un laps de temps
         }
     }
 }
