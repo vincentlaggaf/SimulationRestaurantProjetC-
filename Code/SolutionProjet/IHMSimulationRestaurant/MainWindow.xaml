@@ -5,9 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IHMSimulationRestaurant"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="100" Margin="424,113,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="2.247,1.621"/>
+        Title="Simulation Restaurant" Height="450" Width="515.254"
+        
+        
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="116*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="15,241,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="2.247,1.621" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button Content="Start" Height="50" Width="75" Click="Button_Click" FontFamily="Calibri" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,167,0,0" FontSize="18"/>
+        <Button Content="Pause" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="76" Click="Button_Click" FontFamily="Calibri" FontSize="18" Grid.ColumnSpan="3" Margin="99,167,-22,0"/>
+        <Label Content="Number of waiters" HorizontalAlignment="Left" Height="30" Margin="20,14,0,0" VerticalAlignment="Top" Width="110" FontFamily="Calibri" FontSize="14" Panel.ZIndex="1" Grid.ColumnSpan="2"/>
+        <Label Content="Number of tables" HorizontalAlignment="Left" Height="30" Margin="20,49,0,0" VerticalAlignment="Top" Width="110" FontFamily="Calibri" FontSize="14" Panel.ZIndex="1" Grid.ColumnSpan="2"/>
+        <Slider HorizontalAlignment="Left" Margin="20,119,-27,0" VerticalAlignment="Top" Width="160" ValueChanged="Slider_ValueChanged" Panel.ZIndex="1" Height="18" Grid.ColumnSpan="3"/>
+        <Label Content="Speed : 1&quot; = 1'" HorizontalAlignment="Left" Height="30" Margin="20,84,0,0" VerticalAlignment="Top" Width="110" FontFamily="Calibri" FontSize="14" Panel.ZIndex="1" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="135,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Panel.ZIndex="1" TextChanged="TextBox_TextChanged_1" TextAlignment="Center" AcceptsReturn="True"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="135,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Panel.ZIndex="1"/>
+        <TextBox HorizontalAlignment="Left" Height="226" Margin="197,10,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top" Width="300" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="186,241,0,0" VerticalAlignment="Top" Width="151" RenderTransformOrigin="2.247,1.621" SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="349,241,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.624,-0.079" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

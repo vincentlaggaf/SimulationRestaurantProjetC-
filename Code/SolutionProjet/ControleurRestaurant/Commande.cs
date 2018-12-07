@@ -9,8 +9,8 @@ namespace ControleurRestaurant
     class Commande
     {
         public double time;
-        private List<AbstractDish> dishList;
-
+        //private List<AbstractDish> dishList;
+        private Group group;
         public void setCommande()
         {
 

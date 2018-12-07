@@ -12,21 +12,21 @@ namespace ControleurRestaurant
 
         private int sizeGroup;
 
-        private List<int> clientList = new List<int>();
-
-        private List<string> dishList = new List<string>();
-
-        public int createGroup
+        public int MySizeGroup
         {
             get { return sizeGroup; }
             set { sizeGroup = value; }
         }
+
+        private List<int> clientList = new List<int>();
 
         public void createClientList
         {
             get { return clientList; }
             
         }
+
+        private List<string> dishList = new List<string>();
 
         public void createDishList
         {
