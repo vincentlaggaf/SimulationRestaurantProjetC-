@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="ChefRang.cs" />
     <Compile Include="Group.cs" />
-    <Compile Include="Table.cs" />
     <Compile Include="Commande.cs" />
     <Compile Include="IStaff.cs" />
     <Compile Include="MaitreHotel.cs" />
