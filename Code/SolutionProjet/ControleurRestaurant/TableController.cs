@@ -1,10 +1,21 @@
 ﻿using System;
 namespace ControleurRestaurant
 {
-    public class TableController
+    sealed class TableController
     {
-        public TableController()
+      
+
+        private static TableController instanceTableController = null;
+
+        private TableController(){}
+
+        public static TableController GetTableController()
         {
-        }
+            if (instanceTableController == null)
+            {
+                instanceTableController = new TableController();
+            }
+            return instanceTableController;
+        }      
     }
 }
