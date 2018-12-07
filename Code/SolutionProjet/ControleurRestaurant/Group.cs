@@ -23,7 +23,7 @@ namespace ControleurRestaurant
         public void createClientList
         {
             get { return clientList; }
-            
+
         }
 
         private List<string> dishList = new List<string>();
