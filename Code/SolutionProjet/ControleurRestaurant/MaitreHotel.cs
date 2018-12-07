@@ -17,8 +17,11 @@ namespace ControleurRestaurant
         }
 
 
+        List<int> listeTable = new List<int>();
+
+
         public int chooseTable(int nbPlaces)
-        {
+        { 
             int idTable = 0;
             //int idTable = Requete.getTable(nbPlace);
 
