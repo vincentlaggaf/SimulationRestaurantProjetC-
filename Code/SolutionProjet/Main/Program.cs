@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ControleurRestaurant;
 
 namespace Main
 {
@@ -10,8 +11,8 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello france");
-            Console.ReadKey();
+            Restaurant restaurant = new Restaurant();
+            restaurant.restaurant();
         }
     }
 }

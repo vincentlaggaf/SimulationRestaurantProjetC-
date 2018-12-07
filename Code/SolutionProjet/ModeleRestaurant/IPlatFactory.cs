@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeleRestaurant
 {
-    interface IPlatFactory
+   public interface IPlatFactory
     {
          AbstractDish getDish();
     }

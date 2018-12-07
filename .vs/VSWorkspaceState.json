@@ -5,8 +5,9 @@
     "\\Code\\SolutionProjet",
     "\\Code\\SolutionProjet\\ControleurRestaurant",
     "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
-    "\\Code\\SolutionProjet\\ModeleRestaurant"
+    "\\Code\\SolutionProjet\\ModeleRestaurant",
+    "\\Code\\SolutionProjet\\TestMain2"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\ModeleRestaurant",
+  "SelectedNode": "\\Code\\SolutionProjet\\ControleurRestaurant\\ChefRang.cs",
   "PreviewInSolutionExplorer": false
 }

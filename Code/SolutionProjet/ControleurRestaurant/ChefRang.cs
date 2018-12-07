@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControleurRestaurant
 {
-    class ChefRang : IStaff
+    public class ChefRang : IStaff
     {
         private Availability availability;
 
@@ -25,10 +25,10 @@ namespace ControleurRestaurant
             set { id = value; }
         }
 
-        public void takeCommand(List <IDish> dishlist)
-        {
+        //public void takeCommand(List <IDish> dishlist)
+        //{
 
-        }
+        //}
 
         public void dressTable(int sizeGroup)
         {
