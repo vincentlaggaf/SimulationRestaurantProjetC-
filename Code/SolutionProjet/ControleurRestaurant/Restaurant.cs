@@ -18,8 +18,9 @@ namespace ControleurRestaurant
             int nbServeur = 5;
             while (i < nbServeur) {
                 Serveur serveur = new Serveur();
-                i++;
+               
                 serveur.MyId = i;
+                i++;
                 Console.WriteLine("ajout du serveur"+serveur.MyId);
              }
 
