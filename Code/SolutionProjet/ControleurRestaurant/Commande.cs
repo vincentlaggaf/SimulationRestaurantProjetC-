@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControleurRestaurant
 {
-    class Commande
+    public class Commande
     {
         public double time;
         //private List<AbstractDish> dishList;
