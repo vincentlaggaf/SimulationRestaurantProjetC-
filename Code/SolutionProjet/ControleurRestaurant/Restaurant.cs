@@ -12,17 +12,13 @@ namespace ControleurRestaurant
         {
 
             //Instiate the Maitre d'Hotel
-            MaitreHotel maitreHotel = new MaitreHotel();
+            StaffController.GetStaffController().addMaitreHotel(1);
 
             //Instiate all the waiters
-            int i = 0;
-            int nbServeur = 5;
-            while (i < nbServeur) {
-                Serveur serveur = new Serveur();
-                serveur.MyId = i+1;
-                Console.WriteLine("ajout du serveur : "+serveur.MyId);
-                i++;
-            }
+            StaffController.GetStaffController().addServer(5);
+
+            //Instiate all the chef de rang
+            StaffController.GetStaffController().addChefRang(2);
 
             //Instiate the table controller
             TableController.GetTableController().createListTable(4);
@@ -34,9 +30,9 @@ namespace ControleurRestaurant
                 j++;
             }
 
-
             //Instiate the Exchange area
-            // A FAIRE
+            ZoneExchange zoneExchange = new ZoneExchange();
+
 
             //Instiate the ustensils
             // A FAIRE

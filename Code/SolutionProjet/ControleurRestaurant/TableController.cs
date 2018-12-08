@@ -35,7 +35,7 @@ namespace ControleurRestaurant
             // public List<Table> createListTable(int nbTables){
             int i = 0;
             while (i < nbTables){
-                Table table = new Table
+                Table table = new Table()
                 {
                     MyIdTable = i+1
                 };

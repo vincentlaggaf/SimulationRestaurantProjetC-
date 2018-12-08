@@ -26,6 +26,7 @@ namespace ControleurRestaurant
 
         public void serveCommand(int idTable)
         {
+
             // récupère l'id du groupe afin de récuper la liste 
             // des plats servis et les afficher en console
             // déclenche un chrono pour déclencher cleanTable à la fin
@@ -47,6 +48,22 @@ namespace ControleurRestaurant
             // booleen dans la Classe table, waterAndBread
             // setté à true --> au bout d'un laps de temps, il passe à false
             // --> EVENT : appelle cette méthode qui le re-set à true pendant un laps de temps
+        }
+
+        public int returnID()
+        {
+            return MyId;
+           // throw new NotImplementedException();
+        }
+
+        public void doStuff(int idTable)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void doStuff2(int idTable, int idChefRang)
+        {
+            throw new NotImplementedException();
         }
     }
 }

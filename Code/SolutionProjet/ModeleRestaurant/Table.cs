@@ -9,7 +9,7 @@ namespace ModeleRestaurant
     public class Table
     {
 
-       // public Table(){}
+        public Table(){}
 
         private int idTable;
 
@@ -27,12 +27,12 @@ namespace ModeleRestaurant
             set { numberSeats = value; }
         }
 
-        private Group()
-        {
+        //private Group()
+        //{
 
-        }
+        //}
 
-        Group group1 = new Group();
+        //Group group1 = new Group();
 
         private bool available;
 

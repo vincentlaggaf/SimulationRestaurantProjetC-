@@ -50,6 +50,8 @@
     <Compile Include="Serveur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableController.cs" />
+    <Compile Include="StaffController.cs" />
+    <Compile Include="ZoneExchange.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModeleRestaurant\ModeleRestaurant.csproj">

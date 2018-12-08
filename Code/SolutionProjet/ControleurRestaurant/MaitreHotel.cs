@@ -19,6 +19,9 @@ namespace ControleurRestaurant
 
         List<int> listeTable = new List<int>();
 
+        public MaitreHotel()
+        {
+        }
 
         public int chooseTable(int nbClientsInGroup)
         {
@@ -43,20 +46,31 @@ namespace ControleurRestaurant
 
         public void callChefRang(int idTable)
         {
-            if ((idTable == 1) || (idTable == 2)){
-                //faire STAFF CONTROLLER POUR POUVOIR APPELER CHEF DE RANG
-                // appeler chef rang 1
-                //ChefRang.dressTable()
+            if ((idTable == 1) || (idTable == 2))
+            {
+                for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++)
+                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang")
+                    {
+                        if (StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() == 1)
+                        {
+                            StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff(idTable);
+                        }
+                    }
             }
-
             if ((idTable == 3) || (idTable == 4))
             {
-                // appeler chef rang 2
-                //ChefRang.dressTable()
+                for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++)
+                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang")
+                    {
+                        if (StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() == 2)
+                        {
+                            StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff(idTable);
+                        }
+                    }
             }
         }
-            
-        public void getPayment(int idTable)
+
+            public void getPayment(int idTable)
         {
             int j = 0;
             int price = 0;
@@ -79,6 +93,21 @@ namespace ControleurRestaurant
         public void groupLeaves(int idGroup)
         {
             // passe à 1 l'availability, et passe à 0 l'id de la table dans la table du mcd 
+        }
+        public int returnID()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void doStuff(int idTable)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void doStuff2(int idTable, int idChefRang)
+        {
+
+            throw new NotImplementedException();
         }
 
     }
