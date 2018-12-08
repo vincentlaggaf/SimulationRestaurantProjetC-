@@ -25,15 +25,38 @@ namespace ControleurRestaurant
             set { id = value; }
         }
 
-        //public void takeCommand(List <IDish> dishlist)
-        //{
 
-        //}
-
-        public void dressTable(int sizeGroup)
+        public void takeCommand(int idTable)
         {
+            Commande commande = new Commande();        
+            int i = 0;
+            while (TableController.GetTableController().MylistTable.ElementAt(i).MyIdTable != idTable)
+            {
+                i++;
+            }
+           // TableController.GetTableController().MylistTable.ElementAt(i).getGroup();
+
+
+            Console.WriteLine("id : " + i);
+            commande.setCommande();
 
         }
+
+
+
+
+
+        public void dressTable(int idTable)
+        {
+            // EVENT quand maitre d'hotel fait choose table
+            // il faut que cette méthode récupère le nombre de couverts et les soustrait à la BDD
+            // amélioration : récupérer plutôt la taille du groupe
+            // attente 5 min --> appelle méthode table ou group --> qui appelle takeCommande(idTable)
+        }
+
+
+        //CLASSE TIMER GENERAL, COMMANDE, WAITING --> METTRE DES VARIABLES POUR POUVOIR PASSER EN PARAMÈTRE
+      
 
     }
 }
