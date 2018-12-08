@@ -27,7 +27,7 @@ namespace ConsoleApp3
                 string connectionString = "SERVER=127.0.0.1;DATABASE=bdd_projet_restaurant;UID=root;PASSWORD=";
                 this.connection = new MySqlConnection(connectionString);
             }
-            catch (Exception e)
+            catch (MySqlException e)
             {
                 Console.Write(e.Message);
             }
