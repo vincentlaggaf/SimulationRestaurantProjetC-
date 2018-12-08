@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModeleRestaurant
+namespace ControleurRestaurant
 {
-    public class ClientFactory : IClientFactory
+    public class ZoneExchange
     {
-
-        public Client GetClient(int i)
+        public void CommandComplete()
         {
 
-
-            return new Client(i);
         }
     }
 }

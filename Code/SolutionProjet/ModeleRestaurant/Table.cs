@@ -9,6 +9,8 @@ namespace ModeleRestaurant
     public class Table
     {
 
+        public Table(){}
+
         private int idTable;
 
         public int MyIdTable

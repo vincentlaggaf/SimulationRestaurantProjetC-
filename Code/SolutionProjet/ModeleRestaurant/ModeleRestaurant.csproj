@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bdd.cs" />
+    <Compile Include="ClientFactory.cs" />
+    <Compile Include="IClientFactory.cs" />
     <Compile Include="Ustensil.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="DishRegular.cs" />
@@ -70,12 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ControleurRestaurant\ControleurRestaurant.csproj">
-      <Project>{0F8025DA-105B-4F31-9BE0-C16C44FA427B}</Project>
-      <Name>ControleurRestaurant</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

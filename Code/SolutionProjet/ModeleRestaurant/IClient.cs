@@ -8,6 +8,8 @@ namespace ModeleRestaurant
 {
     public interface IClient
     {
-         int Command();
+       
+         void Command(int i);
+        int getCommand();
     }
 }
