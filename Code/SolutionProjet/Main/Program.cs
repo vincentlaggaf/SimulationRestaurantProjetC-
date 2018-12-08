@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ControleurRestaurant;
 using ModeleRestaurant;
+using ConsoleApp3;
 
 namespace Main
 {
@@ -32,6 +33,13 @@ namespace Main
                 Console.WriteLine(clientab[i].Order);
 
             }
+            //---------------BDD TEST---------------\\
+            //Bdd bdd = new Bdd();
+            //bdd.SupressIngredient(2);
+            ////bdd.CheckTable(4);
+
+            //Console.ReadKey();
+            //---------------------------------------\\
 
 
         }
