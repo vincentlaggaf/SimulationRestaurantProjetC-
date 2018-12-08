@@ -88,16 +88,24 @@ namespace ConsoleApp3
                 using (DataTable dt = new DataTable())
                 {
                     dt.Load(reader);
-                    Console.WriteLine(dt.Rows.Count);
+                    int numbersOfSeats = dt.Rows.Count;
+                    Console.WriteLine(numbersOfSeats);
                 }
 
                 this.connection.Close();
+                //return numbersOfSeats;
             }
             catch (MySqlException e)
             {
                 Console.Write(e);
             }
 
+        }
+
+        public void AssignTable()
+        {
+            //TODO : Requete assignant la premiere table libre au groupe arrivant : soit return l'ID de la table
+            //Je pourrais très bien faire cela dans la methode CheckTable avec une boucle if mais d'après SOLID une méthode = une responsabilité :^(
         }
     }
 
