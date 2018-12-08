@@ -75,5 +75,10 @@ namespace ControleurRestaurant
 
             throw new NotImplementedException();
         }
+
+        Availability IStaff.getAvailability()
+        {
+            return MyAvailability;
+        }
     }
 }

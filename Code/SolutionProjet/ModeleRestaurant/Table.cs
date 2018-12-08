@@ -12,6 +12,13 @@ namespace ModeleRestaurant
         public Table(){}
 
         private int idTable;
+        private Group group;
+
+        public Group MyGroup
+        {
+            get { return group; }
+            set { group = value; }
+        }
 
         public int MyIdTable
         {
@@ -42,10 +49,6 @@ namespace ModeleRestaurant
             set { available = value; }
         }
 
-        //public int getNumberSeat()
-        //{
-
-        //}
 
     }
 }

@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ModeleRestaurant;
 
-
-
-namespace ControleurRestaurant
+namespace ModeleRestaurant
 {
 
     public class Group
@@ -18,6 +15,13 @@ namespace ControleurRestaurant
         IPlatFactory regularDish = new RegularFactory();
 
         IClientFactory clientFactory = new ClientFactory();
+
+        int prixTotal = 0;
+        public int MyPrixTotal
+        {
+            get { return prixTotal; }
+            set { prixTotal = value; }
+        }
 
         public Group(){
             sizeGroupRandom();
@@ -66,10 +70,12 @@ namespace ControleurRestaurant
             for (int i = 0; i < clientList.Count; i++){
                 if (clientList.ElementAt(i).getCommand() == 1){
                     dishList.Add(vegeDish.getDish());
+                    prixTotal += vegeDish.getDish().Price;
                 }
                 else if (clientList.ElementAt(i).getCommand() == 2)
                 {
                     dishList.Add(regularDish.getDish());
+                    prixTotal += regularDish.getDish().Price;
                 }
                 else{
                     Console.WriteLine("error dish list");

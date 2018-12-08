@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+=======
+﻿//using System; using System;
+using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Timers;
+>>>>>>> eb2cf2e... - Changing Group from Controller to Model - Filling methods for Server, MaitreHotel, chefRang - Creating methods for Table
 using ControleurRestaurant;
 using ModeleRestaurant;
 using ConsoleApp3;
@@ -13,6 +18,7 @@ namespace Main
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             //Restaurant restaurant = new Restaurant();
             //restaurant.restaurant();
 
@@ -45,3 +51,16 @@ namespace Main
         }
     }
 }
+=======
+            Restaurant restaurant = new Restaurant();
+            restaurant.restaurant();
+
+
+            //System.Timers.Timer aTimer = new System.Timers.Timer();             //aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);             //aTimer.Interval = 5000;             //aTimer.Enabled = true;              //Console.WriteLine("Press \'q\' to quit the sample.");         }
+
+        // Specify what you want to happen when the Elapsed event is raised.
+        //private static void OnTimedEvent(object source, ElapsedEventArgs e)         //{         //    Console.WriteLine("Hello World!");         //}
+
+    }
+    } 
+>>>>>>> eb2cf2e... - Changing Group from Controller to Model - Filling methods for Server, MaitreHotel, chefRang - Creating methods for Table

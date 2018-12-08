@@ -51,6 +51,8 @@ namespace ControleurRestaurant
             MaitreHotel maitreHotel = new MaitreHotel();
             listStaff.Add(maitreHotel);
 
+            maitreHotel.chooseTable(3);
+
         }
 
         public void addChefRang(int nbChefRang)

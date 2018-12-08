@@ -14,6 +14,8 @@ namespace ControleurRestaurant
         void doStuff(int idTable);
         void doStuff2(int idTable, int idChefRang);
 
+        Availability getAvailability();
+
     }
 
 

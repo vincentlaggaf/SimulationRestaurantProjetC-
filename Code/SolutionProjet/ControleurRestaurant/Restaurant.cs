@@ -11,6 +11,17 @@ namespace ControleurRestaurant
         public void restaurant()
         {
 
+            //Instiate the table controller
+            TableController.GetTableController().createListTable(4);
+            //TableController.GetTableController().MylistTable.ForEach(Console.WriteLine);
+            int j = 0;
+            while (j < TableController.GetTableController().MylistTable.Count)
+            {
+                Console.WriteLine("table id : " + TableController.GetTableController().MylistTable.ElementAt(j).MyIdTable);
+                Console.WriteLine("disponibilité : " + TableController.GetTableController().MylistTable.ElementAt(j).MyAvailable);
+                j++;
+            }
+
             //Instiate the Maitre d'Hotel
             StaffController.GetStaffController().addMaitreHotel(1);
 
@@ -20,15 +31,7 @@ namespace ControleurRestaurant
             //Instiate all the chef de rang
             StaffController.GetStaffController().addChefRang(2);
 
-            //Instiate the table controller
-            TableController.GetTableController().createListTable(4);
-            //TableController.GetTableController().MylistTable.ForEach(Console.WriteLine);
-            int j = 0;
-            while (j < TableController.GetTableController().MylistTable.Count)
-            {
-                Console.WriteLine("table id : "+ TableController.GetTableController().MylistTable.ElementAt(j).MyIdTable);
-                j++;
-            }
+           
 
             //Instiate the Exchange area
             ZoneExchange zoneExchange = new ZoneExchange();
@@ -36,6 +39,9 @@ namespace ControleurRestaurant
 
             //Instiate the ustensils
             // A FAIRE
+
+
+
         }
 
     }
