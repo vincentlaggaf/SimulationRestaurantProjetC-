@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using SqlCommand;
-
 
 namespace ConsoleApp3
 {
@@ -48,7 +46,7 @@ namespace ConsoleApp3
 
         public void IngredientFromRecette()
         {
-
+            //Liason entre la recette et l'ingrédient qui la constitue
         }
 
         public void SupressIngredient(int idIngredient)
@@ -104,6 +102,7 @@ namespace ConsoleApp3
         public int AssignTable()
         {
             //Je pourrais très bien faire cela dans la methode CheckTable avec une boucle if mais d'après SOLID une méthode = une responsabilité :^(
+            
             int idTable = 0;
             try
             {
@@ -123,6 +122,26 @@ namespace ConsoleApp3
                 Console.Write(e);
             }
             return (int)idTable;
+        }
+
+        public void TableUnavailable(int idTable)
+        {
+            try
+            {
+                this.connection.Open();
+                MySqlCommand cmdChangeStateTable = this.connection.CreateCommand();
+
+                cmdChangeStateTable.CommandText = "UPDATE tables SET occuper= 1 WHERE ID_Table = @idTable";
+                cmdChangeStateTable.Parameters.AddWithValue("@idTable", idTable);
+                cmdChangeStateTable.ExecuteNonQuery();
+
+                this.connection.Close();
+
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e);
+            }
         }
     }
 
