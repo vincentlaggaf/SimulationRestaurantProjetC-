@@ -73,10 +73,12 @@ namespace ConsoleApp3
         }
 
         //interagie avec la class Maitre d'hotel
-        public void CheckTable(int place)
+        public int CheckTable(int place)
         {
+            int seatsAvailable = 0;
             try
             {
+                //open sql connecion
                 this.connection.Open();
                 MySqlCommand cmdCheckSeats = this.connection.CreateCommand();
 
@@ -87,18 +89,16 @@ namespace ConsoleApp3
                 using (DataTable dt = new DataTable())
                 {
                     dt.Load(reader);
-                    int numbersOfSeats = dt.Rows.Count;
-                    Console.WriteLine(numbersOfSeats);
+                    seatsAvailable = dt.Rows.Count;
                 }
-
                 this.connection.Close();
-                //return numbersOfSeats;
+                //return seatsAvailable;
             }
             catch (MySqlException e)
             {
                 Console.Write(e);
             }
-
+            return (int) seatsAvailable;
         }
 
         public int AssignTable()
