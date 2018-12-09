@@ -10,5 +10,6 @@ namespace ModeleRestaurant
     {
        
          void Command(int i);
+        int getCommand();
     }
 }

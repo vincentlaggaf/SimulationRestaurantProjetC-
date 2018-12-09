@@ -32,19 +32,28 @@ namespace ControleurRestaurant
 
         public void createListTable(int nbTables)
         {
+
             // public List<Table> createListTable(int nbTables){
             int i = 0;
             while (i < nbTables){
-                Table table = new Table
-                {
-                    MyIdTable = i+1
-                };
+                //Table table = new Table()
+                //{
+                //    MyIdTable = i + 1
+                //};
+                Table table = new Table();
+                table.MyIdTable = i + 1;
+                table.MyAvailable = false;
+                table.MyNumberSeats = 4;
                 listTable.Add(table);
                 i++;
-            }
 
-           // return listTable;
+
+            }
+            
+            // return listTable;
         }
+
+
 
        
 

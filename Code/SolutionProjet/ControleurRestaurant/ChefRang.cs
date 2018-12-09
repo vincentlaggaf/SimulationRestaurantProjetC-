@@ -56,7 +56,29 @@ namespace ControleurRestaurant
 
 
         //CLASSE TIMER GENERAL, COMMANDE, WAITING --> METTRE DES VARIABLES POUR POUVOIR PASSER EN PARAMÈTRE
-      
 
+        public int returnID()
+        {
+            return MyId;
+            // throw new NotImplementedException();
+        }
+
+        public void doStuff(int idTable)
+        {
+            dressTable(idTable);
+
+            throw new NotImplementedException();
+        }
+
+        public void doStuff2(int idTable, int idChefRang)
+        {
+
+            throw new NotImplementedException();
+        }
+
+        Availability IStaff.getAvailability()
+        {
+            return MyAvailability;
+        }
     }
 }

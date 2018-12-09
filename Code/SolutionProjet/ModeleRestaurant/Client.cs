@@ -14,7 +14,7 @@ namespace ModeleRestaurant
         public int Order
         {
             get { return order; }
-            set { order = value; }
+            set { order = value; } 
         }
 
         public Client(int i)
@@ -25,13 +25,15 @@ namespace ModeleRestaurant
         }
         public void Command(int i)
         {
+
             
             Order = i;
         
         }
-      
 
-       
-
+        public int getCommand()
+        {
+           return Order;
+        }
     }
 }
