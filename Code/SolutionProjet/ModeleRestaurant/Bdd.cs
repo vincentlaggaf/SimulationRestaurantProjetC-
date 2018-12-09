@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using SqlCommand;
 
 
 namespace ConsoleApp3
@@ -56,7 +57,6 @@ namespace ConsoleApp3
 
             try
             {
-                //open sql connecion
                 this.connection.Open();
                 MySqlCommand cmdDecrease = this.connection.CreateCommand();
 
@@ -77,7 +77,6 @@ namespace ConsoleApp3
         {
             try
             {
-                //open sql connecion
                 this.connection.Open();
                 MySqlCommand cmdCheckSeats = this.connection.CreateCommand();
 
@@ -102,10 +101,29 @@ namespace ConsoleApp3
 
         }
 
-        public void AssignTable()
+        public int AssignTable()
         {
             //TODO : Requete assignant la premiere table libre au groupe arrivant : soit return l'ID de la table
             //Je pourrais très bien faire cela dans la methode CheckTable avec une boucle if mais d'après SOLID une méthode = une responsabilité :^(
+            int idTable = 0;
+            try
+            {
+                this.connection.Open();
+                MySqlCommand cmdAssignTable = this.connection.CreateCommand();
+
+                cmdAssignTable.CommandText = "SELECT ID_Table FROM tables WHERE occuper = 0 LIMIT 1";
+                cmdAssignTable.ExecuteNonQuery();
+                idTable = (int) cmdAssignTable.ExecuteScalar();
+                //Console.WriteLine(idTable);
+
+                this.connection.Close();
+                
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e);
+            }
+            return (int)idTable;
         }
     }
 
