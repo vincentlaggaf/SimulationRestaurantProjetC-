@@ -103,7 +103,6 @@ namespace ConsoleApp3
 
         public int AssignTable()
         {
-            //TODO : Requete assignant la premiere table libre au groupe arrivant : soit return l'ID de la table
             //Je pourrais très bien faire cela dans la methode CheckTable avec une boucle if mais d'après SOLID une méthode = une responsabilité :^(
             int idTable = 0;
             try
