@@ -49,6 +49,10 @@ namespace ModeleRestaurant
             set { available = value; }
         }
 
+        public int getNumberSeats()
+        {
+
+        }
 
     }
 }
