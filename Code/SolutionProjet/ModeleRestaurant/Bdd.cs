@@ -33,17 +33,6 @@ namespace ConsoleApp3
 
         }
 
-        //Methode à implémenter dans Commande.cs
-        //Récupération de la dishlist afin d'obtenir les id des plats
-        //Faire une requête afin de get l'ingrédient qui compose la recette
-        //public void IngredientFromPlat(int idPlat)
-        //{
-        //    foreach (var id in nomList)
-        //    {
-
-        //    }
-        //}
-
         public void IngredientFromRecette()
         {
             //Liason entre la recette et l'ingrédient qui la constitue
@@ -101,7 +90,6 @@ namespace ConsoleApp3
 
         public int AssignTable()
         {
-            //Je pourrais très bien faire cela dans la methode CheckTable avec une boucle if mais d'après SOLID une méthode = une responsabilité :^(
             
             int idTable = 0;
             try
@@ -141,6 +129,91 @@ namespace ConsoleApp3
             catch (MySqlException e)
             {
                 Console.Write(e);
+            }
+        }
+
+                //Problème : n'arrive pas à return un string comportant tous les champs de la requête
+        public void GetDish(int idDish)
+        {
+            int[] ID_Plat = new int[1];
+            string[] Type = new string[1];
+            string[] Nom = new string[1];
+            int[] Prix = new int[1];
+            double[] Preparation = new double[1];
+            double[] Cuisson = new double[1];
+            int[] NbrePersonne = new int[1];
+
+            try
+            {
+                this.connection.Open();
+                MySqlCommand cmdGetDish = this.connection.CreateCommand();
+
+                cmdGetDish.CommandText = "SELECT ID_Plat, Type, Nom, Prix, Preparation, Cuisson, NbrePersonne FROM plat WHERE ID_plat = @idDish";
+                cmdGetDish.Parameters.AddWithValue("@idDish", idDish);
+                cmdGetDish.ExecuteNonQuery();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmdGetDish);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    ID_Plat[0] = row.Field<int>(0);
+                    Type[0] = row.Field<string>(1);
+                    Nom[0] = row.Field<string>(2);
+                    Prix[0] = row.Field<int>(3);
+                    Preparation[0] = row.Field<double>(4);
+                    Cuisson[0] = row.Field<double>(5);
+                    NbrePersonne[0] = row.Field<int>(6);
+
+                }
+
+                Console.WriteLine(Type[0]);
+                this.connection.Close();
+
+            }
+            catch (MySqlException e)
+            {
+                Console.Write(e);
+            }
+            //return ID_Plat[0];
+        }
+
+        public int GetPrix(int idDish)
+        {
+            int prix = 0;
+            try {
+                this.connection.Open();
+                MySqlCommand cmdGetPrix = this.connection.CreateCommand();
+                cmdGetPrix.CommandText = "SELECT Prix FROM plat Where ID_Plat = @idDish";
+                cmdGetPrix.Parameters.AddWithValue("@idDish", idDish);
+                cmdGetPrix.ExecuteNonQuery();
+                prix = Convert.ToInt32(cmdGetPrix.ExecuteScalar());
+
+                this.connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return (int)prix;
+        }
+
+        public void InitializeUstensil(int quantity)
+        {
+            try
+            {
+                this.connection.Open();
+                MySqlCommand cmdInitialize = this.connection.CreateCommand();
+                cmdInitialize.CommandText = "UPDATE materielcommun SET Quantite = @quantity";
+                cmdInitialize.Parameters.AddWithValue("@quantity", quantity);
+                cmdInitialize.ExecuteNonQuery();
+
+                this.connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }
