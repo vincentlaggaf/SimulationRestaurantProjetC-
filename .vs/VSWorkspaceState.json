@@ -3,11 +3,8 @@
     "",
     "\\Code",
     "\\Code\\SolutionProjet",
-    "\\Code\\SolutionProjet\\ControleurRestaurant",
-    "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
-    "\\Code\\SolutionProjet\\Main",
-    "\\Code\\SolutionProjet\\ModeleRestaurant"
+    "\\Code\\SolutionProjet\\ControleurRestaurant"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\ModeleRestaurant\\Bdd.cs",
+  "SelectedNode": "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
   "PreviewInSolutionExplorer": false
 }
