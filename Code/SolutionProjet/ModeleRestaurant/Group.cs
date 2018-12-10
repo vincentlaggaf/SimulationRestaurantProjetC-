@@ -40,8 +40,6 @@ namespace ModeleRestaurant
         private List<IClient> clientList = new List<IClient>();
         private List<AbstractDish> dishList = new List<AbstractDish>();
 
-       
-
         public void sizeGroupRandom(){
 
             MySizeGroup = rdn.Next(1, 3);
@@ -54,8 +52,7 @@ namespace ModeleRestaurant
             }
         }
 
-        public void addClientToList()
-        {
+        public void addClientToList(){
             clientList.Add(clientFactory.GetClient(orderRandom()));
         }
 
@@ -66,7 +63,6 @@ namespace ModeleRestaurant
 
 
         public void setDishList(){
-
             for (int i = 0; i < clientList.Count; i++){
                 if (clientList.ElementAt(i).getCommand() == 1){
                     dishList.Add(vegeDish.getDish());
@@ -81,6 +77,10 @@ namespace ModeleRestaurant
                     Console.WriteLine("error dish list");
                 }
             }
+        }
+
+        public List<AbstractDish> getDishList(){
+            return dishList;
         }
     }
 }

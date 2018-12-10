@@ -11,8 +11,11 @@ namespace ModeleRestaurant
 
         public Table(){}
 
-        private int idTable;
         private Group group;
+        private int idTable;
+        private bool waterAndBread;
+        private int numberSeats;
+        private bool available;
 
         public Group MyGroup
         {
@@ -26,22 +29,18 @@ namespace ModeleRestaurant
             set { idTable = value; }
         }
 
-        private int numberSeats;
+        public bool MyWaterAndBread
+        {
+            get { return waterAndBread; }
+            set { waterAndBread = value; }
+        }
+
 
         public int MyNumberSeats
         {
             get { return numberSeats; }
             set { numberSeats = value; }
         }
-
-        //private Group()
-        //{
-
-        //}
-
-        //Group group1 = new Group();
-
-        private bool available;
 
         public bool MyAvailable
         {

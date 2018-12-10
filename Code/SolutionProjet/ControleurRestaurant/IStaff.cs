@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModeleRestaurant;
 
 namespace ControleurRestaurant
 {
@@ -12,7 +13,9 @@ namespace ControleurRestaurant
         int returnID();
 
         void doStuff(int idTable);
-        void doStuff2(int idTable, int idChefRang);
+        void doStuff2(int idTable);
+        void doStuff3(Group group);
+        //   void doStuff3(int idTable);
 
         Availability getAvailability();
 

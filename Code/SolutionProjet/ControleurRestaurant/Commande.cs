@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ModeleRestaurant;
 
@@ -9,33 +10,35 @@ namespace ControleurRestaurant
 {
     public class Commande
     {
-        public double time;
-        //private List<AbstractDish> dishList;
-        private Group group;
-        public void setCommande()
+        public int idTableCommande;
+
+        List<int> listeIdPlat = new List<int>();
+        public int time;
+        public Commande()
         {
-            // group.getDishlist()
-            // getPreparationTime();
-            // startPreparation();
+
         }
 
-        public double getPreparationTime()
+        public void setCommande(int idTable, List<AbstractDish> dishList)
         {
-            // int i = 0;
-            // int time = 0;
-            // while (i<group.dishList.lenght){
-            //      time += group.dishList.ElementAt(i).montempsdepreparation;    
-            // }
-            return time;
+
+            idTableCommande = idTable;
+            int i = 0;
+
+            while (i < dishList.Count)
+            {
+                listeIdPlat.Add(dishList.ElementAt(i).Id);
+                time += dishList.ElementAt(i).PreparationTime;
+                i++;
+            }
+            startPreparation(idTable);
         }
 
-        public void startPreparation(double time)
+        public void startPreparation(int idTable)
         {
-            // using system threading task
+            Console.WriteLine("début de la préparation de la commande pour la table :" + idTable);
+            Thread.Sleep(time * 500);
+            ZoneExchange.GetZoneExchange().commandeComplete(idTable);
         }
-
-       
     }
-
-
 }
