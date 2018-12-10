@@ -24,7 +24,7 @@
             <ColumnDefinition Width="37*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="168" Margin="15,241,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="2.247,1.621" SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="15,241,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="2.247,1.621" SelectionChanged="DataGrid_SelectionChanged1"/>
         <Button Content="Start" Height="50" Width="75" Click="Button_Click" FontFamily="Calibri" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,167,0,0" FontSize="18"/>
         <Button Content="Pause" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="76" Click="Button_Click" FontFamily="Calibri" FontSize="18" Grid.ColumnSpan="3" Margin="99,167,-22,0"/>
         <Label Content="Number of waiters" HorizontalAlignment="Left" Height="30" Margin="20,14,0,0" VerticalAlignment="Top" Width="110" FontFamily="Calibri" FontSize="14" Panel.ZIndex="1" Grid.ColumnSpan="2"/>
@@ -34,8 +34,8 @@
         <TextBox HorizontalAlignment="Left" Height="22" Margin="135,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Panel.ZIndex="1" TextChanged="TextBox_TextChanged_1" TextAlignment="Center" AcceptsReturn="True"/>
         <TextBox HorizontalAlignment="Left" Height="22" Margin="135,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Panel.ZIndex="1"/>
         <TextBox HorizontalAlignment="Left" Height="226" Margin="197,10,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top" Width="300" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
-        <DataGrid HorizontalAlignment="Left" Height="168" Margin="186,241,0,0" VerticalAlignment="Top" Width="151" RenderTransformOrigin="2.247,1.621" SelectionChanged="DataGrid_SelectionChanged"/>
-        <DataGrid HorizontalAlignment="Left" Height="168" Margin="349,241,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.624,-0.079" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2"/>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="186,241,0,0" VerticalAlignment="Top" Width="151" RenderTransformOrigin="2.247,1.621" SelectionChanged="DataGrid_SelectionChanged2"/>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="349,241,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="-0.624,-0.079" SelectionChanged="DataGrid_SelectionChanged3" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

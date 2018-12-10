@@ -3,10 +3,8 @@
     "",
     "\\Code",
     "\\Code\\SolutionProjet",
-    "\\Code\\SolutionProjet\\ControleurRestaurant",
-    "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
-    "\\Code\\SolutionProjet\\ModeleRestaurant"
+    "\\Code\\SolutionProjet\\ControleurRestaurant"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\SolutionProjet.sln",
+  "SelectedNode": "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
   "PreviewInSolutionExplorer": false
 }

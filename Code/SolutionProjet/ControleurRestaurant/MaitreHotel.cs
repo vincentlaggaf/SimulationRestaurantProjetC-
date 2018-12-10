@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using ModeleRestaurant;
 
 namespace ControleurRestaurant
 {
@@ -16,112 +18,113 @@ namespace ControleurRestaurant
             set { availability = value; }
         }
 
-
         List<int> listeTable = new List<int>();
 
         public MaitreHotel()
         {
         }
 
-        public int chooseTable(int nbClientsInGroup)
+        public void chooseTable(Group group)
         {
-            TableController.GetTableController().MylistTable.ElementAt(0).MyAvailable = true;
-            int i = 0;
+            Thread.Sleep(10000);
+            int placeTableListe = 0;
             int tableId = 0;
-            while (i < TableController.GetTableController().MylistTable.Count)
-            {
-                if (TableController.GetTableController().MylistTable.ElementAt(i).MyAvailable)
-                {
-                    if (TableController.GetTableController().MylistTable.ElementAt(i).MyNumberSeats >= nbClientsInGroup)
-                    {
-                        Console.WriteLine("table disponible à : " + TableController.GetTableController().MylistTable.ElementAt(i).MyIdTable);
-                        tableId = TableController.GetTableController().MylistTable.ElementAt(i).MyIdTable;
-                    }
-                }
+            bool test = false;
 
-                i++;
+            for (int i = 0; (i < TableController.GetTableController().MylistTable.Count) && (test == false); i++)
+            {
+                if (TableController.GetTableController().MylistTable.ElementAt(i).MyAvailable && (TableController.GetTableController().MylistTable.ElementAt(i).MyNumberSeats >= group.MySizeGroup))
+                {
+                    tableId = TableController.GetTableController().MylistTable.ElementAt(i).MyIdTable;
+                    placeTableListe = i;
+                    test = true;
+                }
             }
-            return tableId;
+
+            if (test == false)
+            {
+                Console.WriteLine("pas de table dispo");
+                Thread.Sleep(1000);
+                chooseTable(group);
+            }
+
+            TableController.GetTableController().MylistTable.ElementAt(placeTableListe).MyGroup = group;
+            Console.WriteLine("les clients vont occuper la table :" + tableId);
+            TableController.GetTableController().MylistTable.ElementAt(placeTableListe).MyAvailable = false;
+            callChefRang(tableId);
         }
-  
+
 
         public void callChefRang(int idTable)
         {
-            if ((idTable == 1) || (idTable == 2))
-            {
-                for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++)
-                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang")
-                    {
-                        if (StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() == 1)
-                        {
+            if ((idTable == 1) || (idTable == 2)){
+                for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++){
+                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang"){
+                        if (StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() == 1){
+                            Console.WriteLine("j'appelle chef rang :" + StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID()+ "pour la table :" + idTable);
                             StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff(idTable);
                         }
                     }
+                }
             }
-            if ((idTable == 3) || (idTable == 4))
-            {
-                for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++)
-                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang")
-                    {
-                        if (StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() == 2)
-                        {
+
+            if ((idTable == 3) || (idTable == 4)){
+                for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++){
+                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang"){
+                        if (StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() == 2){
+                            Console.WriteLine("j'appelle chef rang :" + StaffController.GetStaffController().MylistStaff.ElementAt(i).returnID() + "pour la table :" + idTable);
                             StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff(idTable);
                         }
                     }
+                }
             }
         }
 
-         public void getPayment(int idTable)
-        {
+        public void getPayment(int idTable){
             int j = 0;
-            int price =0;
-            while (TableController.GetTableController().MylistTable.ElementAt(j).MyIdTable != idTable)
-            {
+            int price = 0;
+            while (TableController.GetTableController().MylistTable.ElementAt(j).MyIdTable != idTable){
                 j++;
             }
 
             price = TableController.GetTableController().MylistTable.ElementAt(j).MyGroup.MyPrixTotal;
-            Console.WriteLine("la table : "+ idTable + "a payé : " + price + "€");
+            Console.WriteLine("la table : " + idTable + "a payé : " + price + "€");
 
-
-           groupLeaves(idTable);
+          groupLeaves(idTable);
 
         }
 
-        public void groupLeaves(int idTable)
-        {
-
-            for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++)
+        public void groupLeaves(int idTable){
+            Console.WriteLine("le groupe de la table " + idTable + " part");
+            for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count; i++)
                 if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.Serveur")
                 {
-                if (StaffController.GetStaffController().MylistStaff.ElementAt(i).getAvailability() == Availability.waiting)
+                    if (StaffController.GetStaffController().MylistStaff.ElementAt(i).getAvailability() == Availability.waiting)
                     {
-                        StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff(idTable);
+                        StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff2(idTable);
+                        break;
                     }
                 }
         }
 
 
-        public int returnID()
-        {
+        public int returnID(){
             throw new NotImplementedException();
         }
 
-        public void doStuff(int idTable)
-        {
-            throw new NotImplementedException();
+        public void doStuff(int nbPersonneGroupe){
+            // chooseTable(nbPersonneGroupe);
+        }
+        public void doStuff2(int idTable){
+            getPayment(idTable);
         }
 
-        public void doStuff2(int idTable, int idChefRang)
-        {
-
-            throw new NotImplementedException();
+        public void doStuff3(Group group){
+            chooseTable(group);
         }
 
-
-        Availability IStaff.getAvailability()
-        {
+        Availability IStaff.getAvailability(){
             return MyAvailability;
-        }
+        } 
     }
 }
