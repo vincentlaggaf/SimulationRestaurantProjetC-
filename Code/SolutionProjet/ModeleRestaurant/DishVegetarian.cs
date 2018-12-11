@@ -12,14 +12,20 @@ namespace ModeleRestaurant
 
        public  DishVegetarian()
         {
-            this.Name = "VegetarianDish";
-            this.Price = 10;
-            this.Id = 2;
-            this.PreparationTime = 35;
+            setAttribute();
+        }
+
+        public void setAttribute()
+        {
+
+            Dictionary<string, Object> dishAttribute = Bdd.GetBddConnexion().GetDish(2);
+            this.Name = dishAttribute["Nom"].ToString();
+            this.Price = (int)dishAttribute["Prix"];
+            this.Id = (int)dishAttribute["Id"];
+            this.PreparationTime = (int)dishAttribute["Preparation"];
 
 
 
         }
-
     }
 }

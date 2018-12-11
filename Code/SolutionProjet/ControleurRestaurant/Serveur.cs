@@ -29,7 +29,7 @@ namespace ControleurRestaurant
 
         public void serveCommand(int idTable)
         {
-
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Console.WriteLine("Les clients sont servis à la table :" + idTable);
             Thread.Sleep(10000);
 
@@ -39,6 +39,7 @@ namespace ControleurRestaurant
 
         public void callMaitreHotel(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Console.WriteLine("Les clients vont payer" + idTable);
 
             int indexMaitreHotel = 0;
@@ -66,6 +67,7 @@ namespace ControleurRestaurant
 
         public void cleanTable(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
 
             Console.WriteLine("le serveur va nettoyer la table : " + idTable);
             // il faut que cette méthode récupère le nombre de couverts et les libère en reremplissant la BDD
@@ -96,20 +98,24 @@ namespace ControleurRestaurant
 
         public void doStuff(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             serveCommand(idTable);
         }
 
         public void doStuff2(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             cleanTable(idTable);
         }
 
         public void doStuff3(Group group)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
         }
 
         Availability IStaff.getAvailability()
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             return MyAvailability;
         }
 

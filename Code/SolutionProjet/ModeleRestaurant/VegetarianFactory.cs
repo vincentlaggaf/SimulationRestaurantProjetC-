@@ -10,6 +10,7 @@ namespace ModeleRestaurant
     {
         public AbstractDish getDish()
         {
+           
             return new DishVegetarian();
         }
     }

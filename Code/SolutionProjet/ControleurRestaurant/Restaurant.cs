@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -8,47 +7,76 @@ using ModeleRestaurant;
 
 namespace ControleurRestaurant
 {
+
     public class Restaurant
     {
         Random rdn = new Random();
+        bool stop = true;
 
         public void restaurant()
         {
-
             //Instiate the table controller
             TableController.GetTableController().createListTable(4);
-
-            //Instiate all the chef de rang
-            StaffController.GetStaffController().addChefRang(2);
-
             //Instiate the Maitre d'Hotel
             StaffController.GetStaffController().addMaitreHotel(1);
-
-
-
+            //Instiate all the chef de rang
+            StaffController.GetStaffController().addChefRang(2);
             //Instiate all the waiters
             StaffController.GetStaffController().addServer(5);
 
-            Task task = Task.Factory.StartNew(clientArrival);
+            //Thread thread = new Thread(() =>{TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);});
+            Task task = Task.Factory.StartNew(() => clientArrival());
 
-            //while(true){ Console.WriteLine("avant maitre d'hotel"); Thread.Sleep(5000);}
+            while (true)
+            {
+                while (Console.ReadKey().KeyChar != 'a')
+                {
+                    Thread.Sleep(500);
+                }
+                if (stop == true)
+                {
+                    TableController.GetTableController().MyManualResetEvent.Reset();
+                    stop = false;
+                }
+                else if (stop == false)
+                {
+                    TableController.GetTableController().MyManualResetEvent.Set();
+                    stop = true;
+                }
+                else
+                {
+                    Console.WriteLine("error");
+                }
+            }
         }
-
         public void clientArrival()
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Group groupe = new Group();
+            Console.WriteLine("j'ai accueilli un groupe de :" + groupe.MySizeGroup);
+
             int i = 0;
-            while (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() != "ControleurRestaurant.MaitreHotel"){
+            while (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() != "ControleurRestaurant.MaitreHotel")
+            {
                 i++;
             }
 
-            Task task = Task.Factory.StartNew(() => StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff3(groupe));
-            Console.WriteLine("j'ai accueilli un groupe de :" + groupe.MySizeGroup);
+            Thread thread = new Thread(() =>
+            {
+                StaffController.GetStaffController().MylistStaff.ElementAt(i).doStuff3(groupe);
+            });
+            thread.Start();
+            appelClients();
+        }
 
+        public void appelClients()
+        {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             int time = rdn.Next(1, 5);
-            Thread.Sleep(time * 10000);
+            Thread.Sleep(time * 2000);
             Console.WriteLine("un nouveau groupe arrive");
             clientArrival();
         }
+
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System;
 using ModeleRestaurant;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ControleurRestaurant
 {
     public class TableController
     {
+
 
         private static TableController instanceTableController = null;
 
@@ -15,6 +17,14 @@ namespace ControleurRestaurant
         {
             get { return listTable; }
             set { listTable = value; }
+        }
+
+        private ManualResetEvent manualResetEvent = new ManualResetEvent(true);
+
+        public ManualResetEvent MyManualResetEvent
+        {
+            get { return manualResetEvent; }
+            set { manualResetEvent = value; }
         }
 
         private TableController(){}
