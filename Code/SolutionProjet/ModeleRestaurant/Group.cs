@@ -57,7 +57,7 @@ namespace ModeleRestaurant
         }
 
         public int orderRandom(){
-            int order = rdn.Next(1, 2);
+            int order = rdn.Next(1,3);
             return order;
         }
 
@@ -65,13 +65,17 @@ namespace ModeleRestaurant
         public void setDishList(){
             for (int i = 0; i < clientList.Count; i++){
                 if (clientList.ElementAt(i).getCommand() == 1){
-                    dishList.Add(vegeDish.getDish());
-                    prixTotal += vegeDish.getDish().Price;
+                    AbstractDish newVege = vegeDish.getDish();
+                    dishList.Add(newVege);
+                   
+                    prixTotal += newVege.Price;
                 }
-                else if (clientList.ElementAt(i).getCommand() == 2)
+                 else if (clientList.ElementAt(i).getCommand() == 2)
                 {
-                    dishList.Add(regularDish.getDish());
-                    prixTotal += regularDish.getDish().Price;
+                    AbstractDish newRegu = regularDish.getDish();
+                    dishList.Add(newRegu);
+                  
+                    prixTotal += newRegu.Price;
                 }
                 else{
                     Console.WriteLine("error dish list");

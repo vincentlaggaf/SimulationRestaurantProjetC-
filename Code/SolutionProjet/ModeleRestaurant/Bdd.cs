@@ -6,18 +6,28 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace ConsoleApp3
+namespace ModeleRestaurant
 {
 
     public class Bdd
     {
-
+        private static Bdd instanceBdd = null;
         private MySqlConnection connection;
 
-        public Bdd()
+        private Bdd()
         {
             this.InitConnexion();
         }
+
+        public static Bdd GetBddConnexion()
+        {
+            if (instanceBdd == null)
+            {
+                instanceBdd = new Bdd();
+            }
+            return instanceBdd;
+        }
+
 
         private void InitConnexion()
         {
@@ -133,7 +143,7 @@ namespace ConsoleApp3
         }
 
                 //Problème : n'arrive pas à return un string comportant tous les champs de la requête
-        public void GetDish(int idDish)
+        public Dictionary<string,object> GetDish(int idDish)
         {
             int[] ID_Plat = new int[1];
             string[] Type = new string[1];
@@ -142,6 +152,7 @@ namespace ConsoleApp3
             double[] Preparation = new double[1];
             double[] Cuisson = new double[1];
             int[] NbrePersonne = new int[1];
+            Dictionary<string, Object> dishAttribute = new Dictionary<string, object>();
 
             try
             {
@@ -158,17 +169,32 @@ namespace ConsoleApp3
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    ID_Plat[0] = row.Field<int>(0);
-                    Type[0] = row.Field<string>(1);
-                    Nom[0] = row.Field<string>(2);
-                    Prix[0] = row.Field<int>(3);
-                    Preparation[0] = row.Field<double>(4);
-                    Cuisson[0] = row.Field<double>(5);
-                    NbrePersonne[0] = row.Field<int>(6);
-
+                    dishAttribute.Add("Id", row.Field<int>(0));
+                    dishAttribute.Add("Type", row.Field<string>(1));
+                    dishAttribute.Add("Nom", row.Field<string>(2));
+                    dishAttribute.Add("Prix", row.Field<int>(3));
+                    dishAttribute.Add("Preparation", row.Field<int>(4));
+                    dishAttribute.Add("Cuisson", row.Field<int>(5));
+                    dishAttribute.Add("NbrePersonne", row.Field<int>(6));
+                
+                  
                 }
 
-                Console.WriteLine(Type[0]);
+                //foreach (DataRow row in dt.Rows)
+                //{
+                //    ID_Plat[0] = row.Field<int>(0);
+                //    Type[0] = row.Field<string>(1);
+                //    Nom[0] = row.Field<string>(2);
+                //    Prix[0] = row.Field<int>(3);
+                //    Preparation[0] = row.Field<double>(4);
+                //    Cuisson[0] = row.Field<double>(5);
+                //    NbrePersonne[0] = row.Field<int>(6);
+
+                //}
+
+
+                // Console.WriteLine(Type[0]);
+
                 this.connection.Close();
 
             }
@@ -176,7 +202,7 @@ namespace ConsoleApp3
             {
                 Console.Write(e);
             }
-            //return ID_Plat[0];
+            return dishAttribute;
         }
 
         public int GetPrix(int idDish)

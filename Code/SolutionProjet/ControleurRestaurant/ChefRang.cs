@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using ModeleRestaurant;
 
 namespace ControleurRestaurant
@@ -11,7 +11,7 @@ namespace ControleurRestaurant
     {
 
         public ChefRang(){
-         //   takeCommand(2);
+        
         }
         private Availability availability;
 
@@ -32,6 +32,7 @@ namespace ControleurRestaurant
 
 
         public void takeCommand(int idTable) {
+           
             Console.WriteLine("le chef de rang prend la commande de la table " + idTable);
             Commande commande = new Commande();        
             int i = 0;

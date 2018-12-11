@@ -10,13 +10,23 @@ namespace ModeleRestaurant
     {
        public DishRegular()
         {
-            this.Name ="RegularDish";
-            this.Price =5;
-            this.Id = 1;
-            this.PreparationTime = 25;
+            setAttribute();
+            
         }
         
-        
+
+        public void setAttribute()
+        {
+
+           Dictionary<string,Object>dishAttribute= Bdd.GetBddConnexion().GetDish(1);
+            this.Name = dishAttribute["Nom"].ToString();
+            this.Price = (int)dishAttribute["Prix"];
+            this.Id = (int)dishAttribute["Id"];
+            this.PreparationTime = (int)dishAttribute["Preparation"];
+
+
+
+        }
 
     }
 }
