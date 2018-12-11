@@ -1,12 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Timers;
-using ControleurRestaurant;
-using ModeleRestaurant;
+using IHMSimulationRestaurant;
 
 namespace Main
 {
@@ -14,11 +6,11 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            //Restaurant restaurant = new Restaurant();
-            //restaurant.restaurant();
-
-            Bdd.GetBddConnexion().InitializeTable(5);
-            Console.ReadKey();
+            MainWindow mw = new MainWindow();
+            //Restaurant resto = new Restaurant();
+            //resto.restaurant();
+            //Bdd.GetBddConnexion().InitializeTable(5);
+            //Console.ReadKey();
         }
     }
 }

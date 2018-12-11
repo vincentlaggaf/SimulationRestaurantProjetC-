@@ -39,6 +39,10 @@
       <Project>{0F8025DA-105B-4F31-9BE0-C16C44FA427B}</Project>
       <Name>ControleurRestaurant</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IHMSimulationRestaurant\IHMSimulationRestaurant.csproj">
+      <Project>{57D3F4C2-8FAE-4502-B3DC-23EEBD5CE8B6}</Project>
+      <Name>IHMSimulationRestaurant</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModeleRestaurant\ModeleRestaurant.csproj">
       <Project>{99D0B851-618E-443C-B1EF-231B9194004A}</Project>
       <Name>ModeleRestaurant</Name>

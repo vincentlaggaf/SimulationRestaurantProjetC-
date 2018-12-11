@@ -25,8 +25,6 @@ namespace IHMSimulationRestaurant
     public partial class MainWindow : Window
     {
 
-        Restaurant restaurant;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -36,10 +34,14 @@ namespace IHMSimulationRestaurant
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            restaurant = new Restaurant();
-            restaurant.MyWaiters = int.Parse(TextBoxWaiter.Text);
-            restaurant.MyTables = int.Parse(TextBoxTables.Text);
-            restaurant.restaurant();
+            Restaurant resto = new Restaurant();
+            //resto.MyWaiters = Int32.Parse(TextBoxWaiter.Text);
+            resto.MyTables = Int32.Parse(TextBoxTables.Text);
+            Thread thread = new Thread(() =>
+            {
+                resto.restaurant();
+            });
+            thread.Start();
 
         }
 

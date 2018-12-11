@@ -263,11 +263,11 @@ namespace ModeleRestaurant
         public void InitializeTable(int quantity)
         {
             DeleteTable();
-
+            int newQuantity = quantity - 1;
             string query = "INSERT INTO tables (ID_Table, Places, occuper) VALUES (1, 4, 0);";
             string query2 = "INSERT INTO tables (Places, occuper) VALUES (4, 0);";
 
-            for (int i = 0; i < quantity; i++)
+            for (int i = 0; i < newQuantity; i++)
             {
                 query = query + query2;
             }

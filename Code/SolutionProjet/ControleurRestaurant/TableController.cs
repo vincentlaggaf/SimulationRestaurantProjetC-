@@ -40,6 +40,7 @@ namespace ControleurRestaurant
 
         public void createListTable(int nbTables)
         {
+            Bdd.GetBddConnexion().InitializeTable(nbTables);
             // public List<Table> createListTable(int nbTables){
             int i = 0;
             while (i < nbTables){

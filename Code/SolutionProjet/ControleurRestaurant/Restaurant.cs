@@ -44,24 +44,24 @@ namespace ControleurRestaurant
 
             while (true)
             {
-                while (Console.ReadKey().KeyChar != 'a')
-                {
-                    Thread.Sleep(500);
-                }
-                if (stop == true)
-                {
-                    TableController.GetTableController().MyManualResetEvent.Reset();
-                    stop = false;
-                }
-                else if (stop == false)
-                {
-                    TableController.GetTableController().MyManualResetEvent.Set();
-                    stop = true;
-                }
-                else
-                {
-                    Console.WriteLine("error");
-                }
+                //while (Console.ReadKey().KeyChar != 'a')
+                //{
+                //    Thread.Sleep(500);
+                //}
+                //if (stop == true)
+                //{
+                //    TableController.GetTableController().MyManualResetEvent.Reset();
+                //    stop = false;
+                //}
+                //else if (stop == false)
+                //{
+                //    TableController.GetTableController().MyManualResetEvent.Set();
+                //    stop = true;
+                //}
+                //else
+                //{
+                //    Console.WriteLine("error");
+                //}
             }
         }
         public void clientArrival()
