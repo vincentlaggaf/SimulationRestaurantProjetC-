@@ -31,7 +31,7 @@ namespace ControleurRestaurant
         public void restaurant()
         {
             //Instiate the table controller
-            TableController.GetTableController().createListTable(4);
+            TableController.GetTableController().createListTable(tables);
             //Instiate the Maitre d'Hotel
             StaffController.GetStaffController().addMaitreHotel(1);
             //Instiate all the chef de rang

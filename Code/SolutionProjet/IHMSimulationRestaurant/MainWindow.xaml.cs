@@ -27,19 +27,10 @@ namespace IHMSimulationRestaurant
 
         Restaurant restaurant;
 
-        public delegate void UpdateUi();
-
-        public void UiTest()
-        {
-            // TextBox1.Text = x.ToString();
-        }
-
         public MainWindow()
         {
             InitializeComponent();
-            // TextBox1.Text = x.ToString();
-            // Thread decrementthread = new Thread(Decrement);
-            // decrementthread.Start();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,15 +57,6 @@ namespace IHMSimulationRestaurant
         {
 
 
-            //while ()
-            //{
-
-
-            //    Thread.Sleep(1000);
-
-            //    TextBox1.Dispatcher.Invoke(new UpdateUi(UiTest));
-            //    //Dispatcher.Invoke(() => { TextBox1.Text = toto.ToString(); });
-            //}
         }
 
         private void DataGrid_SelectionChanged1(object sender, SelectionChangedEventArgs e)
