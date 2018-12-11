@@ -26,7 +26,9 @@ namespace ControleurRestaurant
 
         public void chooseTable(Group group)
         {
-            Thread.Sleep(10000);
+            Console.WriteLine("test");
+
+            //Thread.Sleep(10000);
             int placeTableListe = 0;
             int tableId = 0;
             bool test = false;
