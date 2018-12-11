@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Code",
-    "\\Code\\SolutionProjet",
-    "\\Code\\SolutionProjet\\IHMSimulationRestaurant"
+    "\\Code\\SolutionProjet"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\IHMSimulationRestaurant\\MainWindow.xaml.cs",
+  "SelectedNode": "\\Code\\SolutionProjet\\ControleurRestaurant",
   "PreviewInSolutionExplorer": false
 }
