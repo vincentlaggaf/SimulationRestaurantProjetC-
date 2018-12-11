@@ -145,13 +145,13 @@ namespace ModeleRestaurant
                 //Problème : n'arrive pas à return un string comportant tous les champs de la requête
         public Dictionary<string,object> GetDish(int idDish)
         {
-            int[] ID_Plat = new int[1];
-            string[] Type = new string[1];
-            string[] Nom = new string[1];
-            int[] Prix = new int[1];
-            double[] Preparation = new double[1];
-            double[] Cuisson = new double[1];
-            int[] NbrePersonne = new int[1];
+            //int[] ID_Plat = new int[1];
+            //string[] Type = new string[1];
+            //string[] Nom = new string[1];
+            //int[] Prix = new int[1];
+            //double[] Preparation = new double[1];
+            //double[] Cuisson = new double[1];
+            //int[] NbrePersonne = new int[1];
             Dictionary<string, Object> dishAttribute = new Dictionary<string, object>();
 
             try
@@ -232,6 +232,51 @@ namespace ModeleRestaurant
                 this.connection.Open();
                 MySqlCommand cmdInitialize = this.connection.CreateCommand();
                 cmdInitialize.CommandText = "UPDATE materielcommun SET Quantite = @quantity";
+                cmdInitialize.Parameters.AddWithValue("@quantity", quantity);
+                cmdInitialize.ExecuteNonQuery();
+
+                this.connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public void DeleteTable()
+        {
+            try
+            {
+                this.connection.Open();
+                MySqlCommand cmdInitialize1 = this.connection.CreateCommand();
+                cmdInitialize1.CommandText = "DELETE FROM tables";
+                cmdInitialize1.ExecuteNonQuery();
+
+                this.connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public void InitializeTable(int quantity)
+        {
+            DeleteTable();
+
+            string query = "INSERT INTO tables (ID_Table, Places, occuper) VALUES (1, 4, 0);";
+            string query2 = "INSERT INTO tables (Places, occuper) VALUES (4, 0);";
+
+            for (int i = 0; i < quantity; i++)
+            {
+                query = query + query2;
+            }
+            Console.WriteLine(query);
+            try
+            {
+                this.connection.Open();
+                MySqlCommand cmdInitialize = this.connection.CreateCommand();
+                cmdInitialize.CommandText = query;
                 cmdInitialize.Parameters.AddWithValue("@quantity", quantity);
                 cmdInitialize.ExecuteNonQuery();
 
