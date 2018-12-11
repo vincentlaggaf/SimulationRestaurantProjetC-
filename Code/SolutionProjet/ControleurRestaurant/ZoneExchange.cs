@@ -24,6 +24,7 @@ namespace ControleurRestaurant
 
         public void commandeComplete(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Console.WriteLine("commande complète pour la table :" + idTable);
             for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count; i++){
                 if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.Serveur"){

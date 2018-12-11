@@ -47,11 +47,5 @@ namespace ModeleRestaurant
             get { return available; }
             set { available = value; }
         }
-
-        //public int getNumberSeats()
-        //{
-
-        //}
-
     }
 }

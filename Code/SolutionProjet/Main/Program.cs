@@ -7,9 +7,8 @@ namespace Main
 {
     class Program
     {
-      //  private static System.Timers.Timer aTimer;
         static void Main(string[] args)
-        {
+        {    
             Restaurant restaurant = new Restaurant();
             restaurant.restaurant();
         }
