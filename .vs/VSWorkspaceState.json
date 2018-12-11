@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Code",
-    "\\Code\\SolutionProjet"
+    "\\Code\\SolutionProjet",
+    "\\Code\\SolutionProjet\\IHMSimulationRestaurant"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\ControleurRestaurant",
+  "SelectedNode": "\\Code\\SolutionProjet\\SolutionProjet.sln",
   "PreviewInSolutionExplorer": false
 }

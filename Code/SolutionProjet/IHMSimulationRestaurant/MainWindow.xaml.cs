@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ControleurRestaurant;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace IHMSimulationRestaurant
 {
     /// <summary>
@@ -20,13 +24,22 @@ namespace IHMSimulationRestaurant
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        Restaurant restaurant;
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            restaurant = new Restaurant();
+            restaurant.MyWaiters = int.Parse(TextBoxWaiter.Text);
+            restaurant.MyTables = int.Parse(TextBoxTables.Text);
+            restaurant.restaurant();
 
         }
 
@@ -42,6 +55,7 @@ namespace IHMSimulationRestaurant
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
+
 
         }
 
