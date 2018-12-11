@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using ModeleRestaurant;
 
 namespace ControleurRestaurant
@@ -11,7 +12,7 @@ namespace ControleurRestaurant
     {
 
         public ChefRang(){
-        
+         //   takeCommand(2);
         }
         private Availability availability;
 
@@ -32,7 +33,7 @@ namespace ControleurRestaurant
 
 
         public void takeCommand(int idTable) {
-           
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Console.WriteLine("le chef de rang prend la commande de la table " + idTable);
             Commande commande = new Commande();        
             int i = 0;
@@ -43,6 +44,7 @@ namespace ControleurRestaurant
         }
 
         public void dressTable(int idTable) {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             // Console.WriteLine("dans dress table " + idTable);
             takeCommand(idTable);
             // EVENT quand maitre d'hotel fait choose table
@@ -52,21 +54,26 @@ namespace ControleurRestaurant
         }
 
         public int returnID() {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             return MyId;
         }
 
         public void doStuff(int idTable) {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             dressTable(idTable);
         }
 
         public void doStuff2(int idTable) {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
         }
         Availability IStaff.getAvailability() {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             return MyAvailability;
         }
 
         public void doStuff3(Group group)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             throw new NotImplementedException();
         }
     }

@@ -26,7 +26,8 @@ namespace ControleurRestaurant
 
         public void chooseTable(Group group)
         {
-            Thread.Sleep(10000);
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
+             Thread.Sleep(2000);
             int placeTableListe = 0;
             int tableId = 0;
             bool test = false;
@@ -44,7 +45,7 @@ namespace ControleurRestaurant
             if (test == false)
             {
                 Console.WriteLine("pas de table dispo");
-                Thread.Sleep(1000);
+                Thread.Sleep(5000);
                 chooseTable(group);
             }
 
@@ -57,6 +58,7 @@ namespace ControleurRestaurant
 
         public void callChefRang(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             if ((idTable == 1) || (idTable == 2)){
                 for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count(); i++){
                     if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.ChefRang"){
@@ -81,6 +83,7 @@ namespace ControleurRestaurant
         }
 
         public void getPayment(int idTable){
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             int j = 0;
             int price = 0;
             while (TableController.GetTableController().MylistTable.ElementAt(j).MyIdTable != idTable){
@@ -94,7 +97,9 @@ namespace ControleurRestaurant
 
         }
 
-        public void groupLeaves(int idTable){
+        public void groupLeaves(int idTable)
+        {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Console.WriteLine("le groupe de la table " + idTable + " part");
             for (int i = 0; i < StaffController.GetStaffController().MylistStaff.Count; i++)
                 if (StaffController.GetStaffController().MylistStaff.ElementAt(i).ToString() == "ControleurRestaurant.Serveur")
@@ -109,21 +114,26 @@ namespace ControleurRestaurant
 
 
         public int returnID(){
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             throw new NotImplementedException();
         }
 
         public void doStuff(int nbPersonneGroupe){
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             // chooseTable(nbPersonneGroupe);
         }
         public void doStuff2(int idTable){
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             getPayment(idTable);
         }
 
         public void doStuff3(Group group){
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             chooseTable(group);
         }
 
         Availability IStaff.getAvailability(){
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             return MyAvailability;
         } 
     }

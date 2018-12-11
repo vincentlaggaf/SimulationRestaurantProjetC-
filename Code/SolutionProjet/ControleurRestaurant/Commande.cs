@@ -21,7 +21,7 @@ namespace ControleurRestaurant
 
         public void setCommande(int idTable, List<AbstractDish> dishList)
         {
-
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             idTableCommande = idTable;
             int i = 0;
 
@@ -36,6 +36,7 @@ namespace ControleurRestaurant
 
         public void startPreparation(int idTable)
         {
+            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             Console.WriteLine("début de la préparation de la commande pour la table :" + idTable);
             Thread.Sleep(time * 500);
             ZoneExchange.GetZoneExchange().commandeComplete(idTable);

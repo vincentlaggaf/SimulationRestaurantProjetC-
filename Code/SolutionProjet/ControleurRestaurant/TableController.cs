@@ -1,12 +1,14 @@
 ﻿using System;
 using ModeleRestaurant;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ControleurRestaurant
 {
     public class TableController
     {
-        
+
+
         private static TableController instanceTableController = null;
 
         private List<Table> listTable = new List<Table>();
@@ -15,6 +17,14 @@ namespace ControleurRestaurant
         {
             get { return listTable; }
             set { listTable = value; }
+        }
+
+        private ManualResetEvent manualResetEvent = new ManualResetEvent(true);
+
+        public ManualResetEvent MyManualResetEvent
+        {
+            get { return manualResetEvent; }
+            set { manualResetEvent = value; }
         }
 
         private TableController(){}
@@ -30,8 +40,6 @@ namespace ControleurRestaurant
 
         public void createListTable(int nbTables)
         {
-            
-
             // public List<Table> createListTable(int nbTables){
             int i = 0;
             while (i < nbTables){

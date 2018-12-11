@@ -47,7 +47,5 @@ namespace ModeleRestaurant
             get { return available; }
             set { available = value; }
         }
-
-
     }
 }
