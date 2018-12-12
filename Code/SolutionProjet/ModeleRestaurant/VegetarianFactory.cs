@@ -10,7 +10,7 @@ namespace ModeleRestaurant
     {
         public AbstractDish getDish()
         {
-           
+          //  Bdd.GetBddConnexion().SupressIngredient(2);
             return new DishVegetarian();
         }
     }

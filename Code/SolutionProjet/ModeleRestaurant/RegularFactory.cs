@@ -12,7 +12,7 @@ namespace ModeleRestaurant
         public AbstractDish getDish()
         {
           
-          //  Bdd.GetBddConnexion().SupressIngredient(1);
+            Bdd.GetBddConnexion().SupressIngredient(1);
             return new DishRegular();
         }
         

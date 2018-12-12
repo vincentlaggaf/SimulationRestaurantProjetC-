@@ -20,7 +20,7 @@ namespace ControleurRestaurant
         }
 
         private ManualResetEvent manualResetEvent = new ManualResetEvent(true);
-
+       
         public ManualResetEvent MyManualResetEvent
         {
             get { return manualResetEvent; }

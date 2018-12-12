@@ -3,8 +3,10 @@
     "",
     "\\Code",
     "\\Code\\SolutionProjet",
-    "\\Code\\SolutionProjet\\IHMSimulationRestaurant"
+    "\\Code\\SolutionProjet\\ControleurRestaurant",
+    "\\Code\\SolutionProjet\\IHMSimulationRestaurant",
+    "\\Code\\SolutionProjet\\ModeleRestaurant"
   ],
-  "SelectedNode": "\\Code\\SolutionProjet\\IHMSimulationRestaurant\\MainWindow.xaml.cs",
+  "SelectedNode": "\\Code\\SolutionProjet\\SolutionProjet.sln",
   "PreviewInSolutionExplorer": false
 }
