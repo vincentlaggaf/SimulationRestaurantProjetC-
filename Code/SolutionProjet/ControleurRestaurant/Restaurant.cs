@@ -13,11 +13,26 @@ namespace ControleurRestaurant
         Random rdn = new Random();
         bool stop = true;
 
+        private int waiters;
+
+        public int MyWaiters
+        {
+            get { return waiters; }
+            set { waiters = value; }
+        }
+
+        private int tables;
+
+        public int MyTables
+        {
+            get { return tables; }
+            set { tables = value; }
+        }
         public void restaurant()
         { 
             
             //Instiate the table controller
-            TableController.GetTableController().createListTable(4);
+            TableController.GetTableController().createListTable(tables);
             //Instiate the Maitre d'Hotel
             StaffController.GetStaffController().addMaitreHotel(1);
             //Instiate all the chef de rang
@@ -28,24 +43,24 @@ namespace ControleurRestaurant
 
             while (true)
             {
-                while (Console.ReadKey().KeyChar != 'a')
-                {
-                    Thread.Sleep(500);
-                }
-                if (stop == true)
-                {
-                    TableController.GetTableController().MyManualResetEvent.Reset();
-                    stop = false;
-                }
-                else if (stop == false)
-                {
-                    TableController.GetTableController().MyManualResetEvent.Set();
-                    stop = true;
-                }
-                else
-                {
-                    Console.WriteLine("error");
-                }
+                //while (Console.ReadKey().KeyChar != 'a')
+                //{
+                //    Thread.Sleep(500);
+                //}
+                //if (stop == true)
+                //{
+                //    TableController.GetTableController().MyManualResetEvent.Reset();
+                //    stop = false;
+                //}
+                //else if (stop == false)
+                //{
+                //    TableController.GetTableController().MyManualResetEvent.Set();
+                //    stop = true;
+                //}
+                //else
+                //{
+                //    Console.WriteLine("error");
+                //}
             }
         }
         public void clientArrival()
