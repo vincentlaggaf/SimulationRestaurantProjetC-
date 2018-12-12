@@ -28,9 +28,19 @@
     <ExternalConsole>true</ExternalConsole>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -39,6 +49,10 @@
       <Project>{0F8025DA-105B-4F31-9BE0-C16C44FA427B}</Project>
       <Name>ControleurRestaurant</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IHMSimulationRestaurant\IHMSimulationRestaurant.csproj">
+      <Project>{57d3f4c2-8fae-4502-b3dc-23eebd5ce8b6}</Project>
+      <Name>IHMSimulationRestaurant</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModeleRestaurant\ModeleRestaurant.csproj">
       <Project>{99D0B851-618E-443C-B1EF-231B9194004A}</Project>
       <Name>ModeleRestaurant</Name>
@@ -46,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

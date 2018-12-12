@@ -19,8 +19,8 @@ namespace ControleurRestaurant
             set { listTable = value; }
         }
 
-        private ManualResetEvent manualResetEvent = new ManualResetEvent(true);
-       
+        private ManualResetEvent manualResetEvent = new ManualResetEvent(false);
+
         public ManualResetEvent MyManualResetEvent
         {
             get { return manualResetEvent; }
@@ -40,6 +40,7 @@ namespace ControleurRestaurant
 
         public void createListTable(int nbTables)
         {
+            Bdd.GetBddConnexion().InitializeTable(nbTables);
             // public List<Table> createListTable(int nbTables){
             int i = 0;
             while (i < nbTables){
