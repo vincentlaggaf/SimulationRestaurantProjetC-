@@ -114,6 +114,10 @@
       <Project>{0f8025da-105b-4f31-9be0-c16c44fa427b}</Project>
       <Name>ControleurRestaurant</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModeleRestaurant\ModeleRestaurant.csproj">
+      <Project>{99D0B851-618E-443C-B1EF-231B9194004A}</Project>
+      <Name>ModeleRestaurant</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

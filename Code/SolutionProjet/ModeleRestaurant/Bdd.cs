@@ -271,7 +271,7 @@ namespace ModeleRestaurant
             {
                 query = query + query2;
             }
-            Console.WriteLine(query);
+        //    Console.WriteLine(query);
             try
             {
                 this.connection.Open();

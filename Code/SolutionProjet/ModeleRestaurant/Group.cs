@@ -42,7 +42,7 @@ namespace ModeleRestaurant
 
         public void sizeGroupRandom(){
 
-            MySizeGroup = rdn.Next(1, 3);
+            MySizeGroup = rdn.Next(1, 5);
         }
         public void setClientList()
         {

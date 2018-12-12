@@ -119,5 +119,9 @@ namespace ControleurRestaurant
             return MyAvailability;
         }
 
+        public int doStuff4()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

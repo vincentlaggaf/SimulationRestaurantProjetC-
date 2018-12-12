@@ -11,6 +11,14 @@ namespace ControleurRestaurant
     public class MaitreHotel : IStaff
     {
         private Availability availability;
+       
+        private int totalPrice;
+
+        public int MyTotalPrice
+        {
+            get { return totalPrice; }
+            set { totalPrice = value; }
+        }
 
         public Availability MyAvailability
         {
@@ -92,6 +100,7 @@ namespace ControleurRestaurant
 
             price = TableController.GetTableController().MylistTable.ElementAt(j).MyGroup.MyPrixTotal;
             Console.WriteLine("la table : " + idTable + "a payé : " + price + "€");
+            MyTotalPrice += price;
 
           groupLeaves(idTable);
 
@@ -119,7 +128,7 @@ namespace ControleurRestaurant
         }
 
         public void doStuff(int nbPersonneGroupe){
-            TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
+           
             // chooseTable(nbPersonneGroupe);
         }
         public void doStuff2(int idTable){
@@ -135,6 +144,11 @@ namespace ControleurRestaurant
         Availability IStaff.getAvailability(){
             TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             return MyAvailability;
-        } 
+        }
+
+        public int doStuff4()
+        {
+            return MyTotalPrice;
+        }
     }
 }

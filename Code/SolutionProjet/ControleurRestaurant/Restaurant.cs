@@ -38,7 +38,8 @@ namespace ControleurRestaurant
             //Instiate all the chef de rang
             StaffController.GetStaffController().addChefRang(2);
             //Instiate all the waiters
-            StaffController.GetStaffController().addServer(5);
+            StaffController.GetStaffController().addServer(waiters);
+            Console.WriteLine("Le restaurant possède : " + waiters + " serveurs et " + tables);
             Task task = Task.Factory.StartNew(() => clientArrival());
 
             while (true)
@@ -86,8 +87,8 @@ namespace ControleurRestaurant
         public void appelClients()
         {
             TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
-            int time = rdn.Next(1, 5);
-            Thread.Sleep(time * 2000);
+            int time = rdn.Next(1, 4);
+            Thread.Sleep(time * 1000);
             Console.WriteLine("un nouveau groupe arrive");
             clientArrival();
         }

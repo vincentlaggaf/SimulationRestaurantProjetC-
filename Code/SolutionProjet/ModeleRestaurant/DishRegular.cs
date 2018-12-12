@@ -18,17 +18,14 @@ namespace ModeleRestaurant
         public void setAttribute()
         {
 
-            // Dictionary<string,Object>dishAttribute= Bdd.GetBddConnexion().GetDish(1);
-            //this.Name = dishAttribute["Nom"].ToString();
-            //this.Price = (int)dishAttribute["Prix"];
-            //this.Id = (int)dishAttribute["Id"];
-            //this.PreparationTime = (int)dishAttribute["Preparation"];
+            Dictionary<string, Object> dishAttribute = Bdd.GetBddConnexion().GetDish(1);
+            this.Name = dishAttribute["Nom"].ToString();
+            this.Price = (int)dishAttribute["Prix"];
+            this.Id = (int)dishAttribute["Id"];
+            this.PreparationTime = (int)dishAttribute["Preparation"];
 
 
-            this.Name = "dishregular";
-            this.Price = 25;
-            this.Id = 1;
-            this.PreparationTime = 25;
+       
         }
 
     }

@@ -15,7 +15,7 @@ namespace ControleurRestaurant
         void doStuff(int idTable);
         void doStuff2(int idTable);
         void doStuff3(Group group);
-        //   void doStuff3(int idTable);
+        int doStuff4();
 
         Availability getAvailability();
 

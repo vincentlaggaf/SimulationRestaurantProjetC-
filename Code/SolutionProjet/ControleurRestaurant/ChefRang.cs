@@ -76,5 +76,10 @@ namespace ControleurRestaurant
             TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);
             throw new NotImplementedException();
         }
+
+        public int doStuff4()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
