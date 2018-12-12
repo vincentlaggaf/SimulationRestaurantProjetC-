@@ -35,7 +35,7 @@
         <TextBox HorizontalAlignment="Left" Height="22" Margin="135,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Panel.ZIndex="1" TextChanged="TextBox_TextChanged_1" TextAlignment="Center" AcceptsReturn="True" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Height="22" Margin="135,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Panel.ZIndex="1" Grid.ColumnSpan="2"/>
         <Button Grid.ColumnSpan="2" Content="Pause" HorizontalAlignment="Left" Margin="105,195,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_1" Height="41"/>
-        <Button x:Name="BTNlaunch" Grid.ColumnSpan="2" Content="Launch" HorizontalAlignment="Left" Margin="20,146,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2" Height="37"/>
+        <Button x:Name="BTNLaunch" Grid.ColumnSpan="2" Content="Launch" HorizontalAlignment="Left" Margin="20,146,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2" Height="37"/>
 
     </Grid>
 </Window>

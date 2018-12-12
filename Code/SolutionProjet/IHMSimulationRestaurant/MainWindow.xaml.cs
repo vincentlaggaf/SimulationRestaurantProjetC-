@@ -46,7 +46,7 @@ namespace IHMSimulationRestaurant
 
 
             //System.Diagnostics.Process.Start("C:\\Users\\Emma\\source\\repos\\vincentlaggaf\\SimulationRestaurantProjetC-\\Code\\SolutionProjet\\Main\\bin\\Debug\\Main.exe");
-             this.BTNlaunch.Visibility = Visibility.Hidden;
+             this.BTNLaunch.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
