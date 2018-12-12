@@ -14,7 +14,8 @@ namespace ControleurRestaurant
         bool stop = true;
 
         public void restaurant()
-        {
+        { 
+            
             //Instiate the table controller
             TableController.GetTableController().createListTable(4);
             //Instiate the Maitre d'Hotel
@@ -23,8 +24,6 @@ namespace ControleurRestaurant
             StaffController.GetStaffController().addChefRang(2);
             //Instiate all the waiters
             StaffController.GetStaffController().addServer(5);
-
-            //Thread thread = new Thread(() =>{TableController.GetTableController().MyManualResetEvent.WaitOne(Timeout.Infinite);});
             Task task = Task.Factory.StartNew(() => clientArrival());
 
             while (true)

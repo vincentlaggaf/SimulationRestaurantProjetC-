@@ -19,7 +19,7 @@ namespace ControleurRestaurant
             set { listTable = value; }
         }
 
-        private ManualResetEvent manualResetEvent = new ManualResetEvent(true);
+        private ManualResetEvent manualResetEvent = new ManualResetEvent(false);
 
         public ManualResetEvent MyManualResetEvent
         {
